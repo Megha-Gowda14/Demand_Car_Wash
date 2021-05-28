@@ -4,13 +4,13 @@ const checkAuth = require("../middlewares/check-auth");
 const AccountController = require("../controllers/accountController");
 
 router.patch(
-  "/update/:washerId",
+  "/update/:washId",
   [checkAuth.verifyToken],
   AccountController.updateProfile
 );
 
 router.delete(
-  "/delete/:washerId",
+  "/delete/:washId",
   [checkAuth.verifyToken],
   AccountController.deleteProfile
 );

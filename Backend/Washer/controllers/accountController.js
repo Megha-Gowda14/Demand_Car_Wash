@@ -1,7 +1,7 @@
 const MemberModel = require("../model/memberModel");
 
 exports.updateProfile = (req, res) => {
-  const id = req.params.mechId;
+  const id = req.params.washId;
   MemberModel.updateMany({ _id: id }, { $set: req.body })
     .exec()
     .then((response) => {
@@ -18,7 +18,7 @@ exports.updateProfile = (req, res) => {
 };
 
 exports.deleteProfile = (req, res) => {
-  const id = req.params.mechId;
+  const id = req.params.washId;
   MemberModel.deleteOne({ _id: id })
     .exec()
     .then((response) => {
