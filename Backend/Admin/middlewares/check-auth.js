@@ -1,3 +1,4 @@
+//require modules
 const jwt = require("jsonwebtoken");
 const authConfig = require("../config/authConfig");
 const Member = require("../model/memberModel");
