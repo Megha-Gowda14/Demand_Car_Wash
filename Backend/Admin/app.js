@@ -1,24 +1,26 @@
+//Import Modules
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const cors = require("cors");
-const dbConfig = require("./config/dbConfig");
+//const cors = require("cors");
 const authRoutes = require("./services/authServices");
 const carRoutes = require("./services/carServices");
 const serviceRoutes = require("./services/car-washServices");
 const orderRoutes = require("./services/orderServices");
-const mechanicRoutes = require("./services/mechanicServices");
+const mechanicRoutes = require("./services/washerServices");
 
-var corsOptions = {
-  origin: "http://localhost:3000",
-};
+//app.use(cors(corsOptions));
 
-app.use(cors(corsOptions));
+//Port Connection
+const port = process.env.PORT || 4003;
+app.listen(port, () => {
+  console.log("Listening on Admin MS Port: " + port);
+});
 
-mongoose
-  .connect(
-    `mongodb+srv://root:${dbConfig.PASSWORD}@learnmongodb.tuuzo.mongodb.net/${dbConfig.DBNAME}?retryWrites=true&w=majority`,
+
+mongoose.connect(
+  `mongodb+srv://Megha:Meghagtg0904@cluster0.4bvwy.mongodb.net/Admin?retryWrites=true&w=majority`,
     { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }
   )
   .catch((err) => {
@@ -53,7 +55,7 @@ app.use("/admin/auth", authRoutes);
 app.use("/admin/car-func", carRoutes);
 app.use("/admin/car-services", serviceRoutes);
 app.use("/admin/order", orderRoutes);
-app.use("/admin/mechanic", mechanicRoutes);
+app.use("/admin/washer", washerRoutes);
 
 //Server Side Error Handling
 app.use((req, res, next) => {
