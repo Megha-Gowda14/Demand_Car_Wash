@@ -8,7 +8,7 @@ const authRoutes = require("./services/authServices");
 const carRoutes = require("./services/carServices");
 const serviceRoutes = require("./services/car-washServices");
 const orderRoutes = require("./services/orderServices");
-const mechanicRoutes = require("./services/washerServices");
+const washerRoutes = require("./services/washerServices");
 
 //app.use(cors(corsOptions));
 
