@@ -20,4 +20,4 @@ const userSchema = mongoose.Schema({
   status: { type: String },
 });
 
-module.exports = mongoose.model("washer", userSchema);
+module.exports = mongoose.model("member", userSchema);

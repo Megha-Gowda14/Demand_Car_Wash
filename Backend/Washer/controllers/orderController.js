@@ -1,12 +1,12 @@
 const OrderModel = require("../model/orderModel");
-const MemberModel = require("../model/washerModel");
+const MemberModel = require("../model/memberModel");
 
 //Find IN-PROCESS Orders
 exports.findInProcessOrders = (req, res) => {
   OrderModel.find({
     $or: [
-      { washer_Id: req.params.washerId, status: "IN-PROCESS" },
-      { washer_Id: req.params.washerId, status: "ACCEPTED" },
+      { mechanicId: req.params.mechId, status: "IN-PROCESS" },
+      { mechanicId: req.params.mechId, status: "ACCEPTED" },
     ],
   })
     .exec()
@@ -41,11 +41,11 @@ exports.updateOrder = (req, res) => {
         .exec()
         .then((obj) => {
           //console.log(obj);
-          const washerId = obj.Washer_Id;
-          console.log("Washer Id: " + washerId);
+          const mechId = obj.mechanicId;
+          console.log("Mechanic Id: " + mechId);
           if (req.body.status === "ACCEPTED") {
-            WasherModel.updateOne(
-              { _id: obj.washer_Id },
+            MemberModel.updateOne(
+              { _id: obj.mechanicId },
               {
                 $set: { status: "NOT AVAILABLE" },
               }
@@ -57,8 +57,8 @@ exports.updateOrder = (req, res) => {
                 console.log("Member Status Error: " + err);
               });
           } else {
-            WasherModel.updateOne(
-              { _id: obj.washer_Id },
+            MemberModel.updateOne(
+              { _id: obj.mechanicId },
               {
                 $set: { status: "AVAILABLE" },
               }
@@ -87,7 +87,7 @@ exports.updateOrder = (req, res) => {
 
 //Find My Orders
 exports.findMyOrders = (req, res) => {
-  OrderModel.find({ washer_Id: req.params.washerId })
+  OrderModel.find({ mechanicId: req.params.mechId })
     .exec()
     .then((response) => {
       if (response.length == 0) {
