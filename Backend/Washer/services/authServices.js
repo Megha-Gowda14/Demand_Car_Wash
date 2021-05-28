@@ -15,9 +15,10 @@ router.get(
   (req, res) => {
     res.status(200).send("Customer Content.");
   }
-);
+);  
 */
 
+//signup/login
 router.post("/signup", UsersController.signup);
 
 router.post("/login", UsersController.login);
