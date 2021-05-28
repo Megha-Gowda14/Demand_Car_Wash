@@ -1,5 +1,7 @@
+//require mongoose module 
 const mongoose = require("mongoose");
 
+//washer schema
 const userSchema = mongoose.Schema({
   _id: mongoose.Schema.Types.ObjectId,
   name: {
@@ -16,9 +18,10 @@ const userSchema = mongoose.Schema({
   mobile: { type: String },
   role: {
     type: String,
-    default: "MECHANIC",
+    default: "Washer",
   },
   status: { type: String, default: "AVAILABLE" },
 });
 
+//export model
 module.exports = mongoose.model("member", userSchema);

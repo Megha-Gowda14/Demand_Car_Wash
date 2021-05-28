@@ -1,5 +1,7 @@
+//require module
 const mongoose = require("mongoose");
 
+//services Schema
 const serviceSchema = mongoose.Schema({
   serviceType: {
     type: String,
@@ -32,4 +34,5 @@ const serviceSchema = mongoose.Schema({
   },
 });
 
+//export model
 module.exports = mongoose.model("services", serviceSchema);

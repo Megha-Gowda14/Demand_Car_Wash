@@ -1,5 +1,7 @@
+//require module
 const mongoose = require("mongoose");
 
+//order schema
 const orderSchema = mongoose.Schema({
   customerId: { type: String },
   customerName: { type: String },
@@ -16,4 +18,5 @@ const orderSchema = mongoose.Schema({
   },
 });
 
+//export model
 module.exports = mongoose.model("order", orderSchema);
