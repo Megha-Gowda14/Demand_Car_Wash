@@ -42,7 +42,7 @@ exports.updateOrder = (req, res) => {
         .then((obj) => {
           //console.log(obj);
           const washId = obj.washerId;
-          console.log("Mechanic Id: " + washId);
+          console.log("Washer Id: " + washId);
           if (req.body.status === "ACCEPTED") {
             MemberModel.updateOne(
               { _id: obj.washerId },
