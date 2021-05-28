@@ -1,8 +1,8 @@
-const MemberModel = require("../model/washerModel");
+const MemberModel = require("../model/memberModel");
 
 exports.updateProfile = (req, res) => {
-  const id = req.params.washerId;
-  WasherModel.updateMany({ _id: id }, { $set: req.body })
+  const id = req.params.mechId;
+  MemberModel.updateMany({ _id: id }, { $set: req.body })
     .exec()
     .then((response) => {
       console.log("Profile Updated Successfully: " + response);
@@ -19,7 +19,7 @@ exports.updateProfile = (req, res) => {
 
 exports.deleteProfile = (req, res) => {
   const id = req.params.mechId;
-  WasherModel.deleteOne({ _id: id })
+  MemberModel.deleteOne({ _id: id })
     .exec()
     .then((response) => {
       res.status(200).json({
@@ -29,5 +29,5 @@ exports.deleteProfile = (req, res) => {
     .catch((err) => {
       console.log("Account Delete error: " + err);
       res.status(500).json({ "Account Delete error ": err });
-    });
+    }); 
 };
