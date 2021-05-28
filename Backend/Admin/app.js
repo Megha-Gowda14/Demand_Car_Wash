@@ -1,25 +1,24 @@
-//import required modules
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-//const cors = require("cors");
-
+const cors = require("cors");
+const dbConfig = require("./config/dbConfig");
 const authRoutes = require("./services/authServices");
-const accountRoutes = require("./services/accountServices");
+const carRoutes = require("./services/carServices");
+const serviceRoutes = require("./services/car-washServices");
 const orderRoutes = require("./services/orderServices");
+const mechanicRoutes = require("./services/mechanicServices");
 
-//Port Connection
-const port = process.env.PORT || 4002;
-app.listen(port, () => {
-  console.log("Listening on Washer MS Port: " + port);
-});
+var corsOptions = {
+  origin: "http://localhost:3000",
+};
 
+app.use(cors(corsOptions));
 
-//app.use(cors(corsOptions));
-
-mongoose.connect(
-    `mongodb+srv://Megha:Meghagtg0904@cluster0.4bvwy.mongodb.net/Washer?retryWrites=true&w=majority`,
+mongoose
+  .connect(
+    `mongodb+srv://root:${dbConfig.PASSWORD}@learnmongodb.tuuzo.mongodb.net/${dbConfig.DBNAME}?retryWrites=true&w=majority`,
     { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }
   )
   .catch((err) => {
@@ -33,11 +32,9 @@ db.once("open", function () {
 });
 
 app.use(bodyParser.urlencoded({ extended: false }));
-
-// parse requests of content-type - application/json
 app.use(bodyParser.json());
 
-//For preventing CORS ERRORS
+//For preventing CORS ERRORS  (Postman is just a testing tool)
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
@@ -52,11 +49,13 @@ app.use((req, res, next) => {
 });
 
 //Every request from admin route goes through this url : /admin
-app.use("/washer/auth", authRoutes);
-app.use("/washer/account", accountRoutes);
-app.use("/washer/orders", orderRoutes);
+app.use("/admin/auth", authRoutes);
+app.use("/admin/car-func", carRoutes);
+app.use("/admin/car-services", serviceRoutes);
+app.use("/admin/order", orderRoutes);
+app.use("/admin/mechanic", mechanicRoutes);
 
-//Error Handling
+//Server Side Error Handling
 app.use((req, res, next) => {
   const error = new Error("Not found");
   error.status = 404;
