@@ -1,5 +1,7 @@
+//Require mongoose
 const mongoose = require("mongoose");
 
+//Car Schema
 const carSchema = mongoose.Schema({
   name: {
     type: String,
@@ -12,4 +14,5 @@ const carSchema = mongoose.Schema({
   },
 });
 
+//export module
 module.exports = mongoose.model("car", carSchema);
