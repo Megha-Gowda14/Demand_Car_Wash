@@ -33,4 +33,5 @@ router.delete(
   [checkAuth.verifyToken, checkAuth.isAdmin],
   CarController.deleteCar
 );
+
 module.exports = router;

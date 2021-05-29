@@ -59,7 +59,7 @@ exports.login = (req, res, next) => {
 //Signup/registeration
 exports.signup = (req, res, next) => {
   if (!req.body.name || !req.body.email || !req.body.password) {
-    return res.status(400).json({ message: "All fields are required" });
+    return res.status(400).json({ message: "All fields are required" })
   }
 
   Member.find({
@@ -84,6 +84,8 @@ exports.signup = (req, res, next) => {
               email: req.body.email,
               password: hash,
               mobile: req.body.mobile,
+              role : req.body.role,
+              status:req.body.status
             });
             member
               .save()
@@ -91,13 +93,13 @@ exports.signup = (req, res, next) => {
                 console.log(result);
                 res.status(201).json({
                   message: "Registered Successfully",
-                  user: result,
+                  user: result
                 });
               })
               .catch((err) => {
                 console.log("Registration Error" + err);
                 res.status(500).json({
-                  Registartion_Error: err,
+                  Registartion_Error: err
                 });
               });
           }

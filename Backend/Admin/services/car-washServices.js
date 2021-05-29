@@ -3,15 +3,14 @@ const router = express.Router();
 const checkAuth = require("../middlewares/check-auth");
 const ServiceController = require("../controllers/serviceController");
 
-router.post(
-  "/addService",
+router.post("/addService",
   [checkAuth.verifyToken, checkAuth.isAdmin],
   ServiceController.addService
 );
 
-router.get("/findAll", ServiceController.findAll);
+router.get('/findAll', ServiceController.findAll);
 
-router.get("/findById/:serviceId", ServiceController.findByServiceId);
+router.get('/findById/:serviceId', ServiceController.findByServiceId);
 router.patch(
   "/updateService/:serviceId",
   [checkAuth.verifyToken, checkAuth.isAdmin],

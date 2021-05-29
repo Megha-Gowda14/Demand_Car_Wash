@@ -25,13 +25,13 @@ exports.findPlacedOrders = (req, res) => {
     });
 };
 
-//Send Order to Mechanic
+//Send Order to washer
 exports.updateOrder = (req, res) => {
   const orderId = req.params.orderId;
   //updateOne({ _id: id }, { $set: req.body }
   OrderModel.updateOne(
     { _id: orderId },
-    { $set: { status: "IN-PROCESS", mechanicId: req.body.mechanicId } }
+    { $set: { status: "IN-PROCESS", washerId: req.body.washerId } }
   )
     .exec()
     .then((response) => {

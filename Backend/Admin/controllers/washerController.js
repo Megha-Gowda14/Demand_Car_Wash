@@ -2,7 +2,9 @@ const Member = require("../model/memberModel");
 
 //FInd Available Mechanics
 exports.findAvailable = (req, res) => {
-  Member.find({ status: "AVAILABLE" })
+  Member.find({ 
+    role:"WASHER",
+    status: "AVAILABLE" })
     .exec()
     .then((response) => {
       if (response.length == 0) {
@@ -23,7 +25,7 @@ exports.findAvailable = (req, res) => {
     });
 };
 
-//FInd All Mechanics
+//FInd All washers
 exports.findAll = (req, res) => {
   Member.find()
     .select("name email mobile status")
@@ -31,7 +33,7 @@ exports.findAll = (req, res) => {
     .then((response) => {
       if (response.length == 0) {
         res.status(200).json({
-          message: "Add a Mechanic",
+          message: "Add a washer",
         });
       } else {
         res.status(200).json({
@@ -42,7 +44,7 @@ exports.findAll = (req, res) => {
     .catch((err) => {
       console.log(err);
       res.status(500).json({
-        error: err,
+        error: err
       });
     });
 };

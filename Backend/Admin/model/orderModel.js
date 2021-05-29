@@ -10,7 +10,7 @@ const orderSchema = mongoose.Schema({
   custAddress: { type: String, max: 40 },
   serviceName: { type: String },
   servicePrice: { type: Number },
-  mechanicId: { type: String },
+  washerId: { type: String },
   requestedOn: { type: Date, default: Date.now() },
   deliveredOn: { type: Date },
   status: {

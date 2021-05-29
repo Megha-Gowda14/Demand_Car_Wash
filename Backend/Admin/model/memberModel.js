@@ -18,7 +18,7 @@ const userSchema = mongoose.Schema({
   mobile: { type: String },
   role: {
     type: String,
-    default: "Washer",
+    default: "WASHER",
   },
   status: { type: String, default: "AVAILABLE" },
 });
