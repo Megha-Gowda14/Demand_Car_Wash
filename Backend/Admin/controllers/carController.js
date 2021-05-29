@@ -1,8 +1,8 @@
-const CarModel = require("../model/carModel");
+const Carmodel = require("../model/carModel");
 
 //Add Car
 exports.addCar = (req, res) => {
-  CarModel.findOne({ name: req.body.name })
+  Carmodel.findOne({ name: req.body.name })
     .exec()
     .then((response) => {
       if (response) {
@@ -10,11 +10,12 @@ exports.addCar = (req, res) => {
           message: "Name Already Exist",
         });
       } else {
-        const car = new CarModel({
+        const car = new Carmodel({
           name: req.body.name,
           brand: req.body.brand,
         });
-        car.save().then((response) => {
+        car.save()
+          .then((response) => {
           console.log("Car Added: " + response);
           res.status(201).json({
             message: "Car Added Successfully",
@@ -22,7 +23,7 @@ exports.addCar = (req, res) => {
               brand: response.brand,
               name: response.name,
               _id: response._id,
-            },
+            }
           });
         });
       }
@@ -37,7 +38,7 @@ exports.addCar = (req, res) => {
 
 //Find All Cars
 exports.findAllCars = (req, res) => {
-  CarModel.find()
+  Carmodel.find()
     .select("_id name brand")
     .exec()
     .then((response) => {
@@ -52,14 +53,14 @@ exports.findAllCars = (req, res) => {
     .catch((err) => {
       console.log("Find All Cars Method Error: " + err);
       res.status(500).json({
-        error: err,
+        error: err
       });
     });
-};
+}
 
 //Find All Brands
 exports.findAllBrands = (req, res) => {
-  CarModel.find()
+  Carmodel.find()
     .distinct("brand")
     .exec()
     .then((response) => {
@@ -81,7 +82,7 @@ exports.findAllBrands = (req, res) => {
 
 //Find All Cars By Brands
 exports.findByBrand = (req, res) => {
-  CarModel.find({ brand: req.body.brand })
+  Carmodel.find({ brand: req.body.brand })
     .select("name")
     .exec()
     .then((response) => {
@@ -107,7 +108,7 @@ exports.findByBrand = (req, res) => {
 
 //FInd Car By Name
 exports.findByCarId = (req, res) => {
-  CarModel.findOne({ _id: req.params.carId })
+  Carmodel.findOne({ _id: req.params.carId })
     .exec()
     .then((response) => {
       if (response == null) {
@@ -132,7 +133,7 @@ exports.findByCarId = (req, res) => {
 exports.updateCar = (req, res) => {
   let obj = req.body;
   const id = req.params.id;
-  CarModel.updateOne({ _id: id }, { $set: obj })
+  Carmodel.updateOne({ _id: id }, { $set: obj })
     .exec()
     .then((response) => {
       console.log("Updated Successfully");
@@ -149,7 +150,7 @@ exports.updateCar = (req, res) => {
 };
 
 exports.deleteCar = (req, res) => {
-  CarModel.deleteOne({ _id: req.params.carId })
+  Carmodel.deleteOne({ _id: req.params.carId })
     .exec()
     .then((result) => {
       res.status(200).json({

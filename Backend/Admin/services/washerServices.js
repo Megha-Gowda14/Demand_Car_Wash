@@ -1,18 +1,18 @@
 const express = require("express");
 const router = express.Router();
 const checkAuth = require("../middlewares/check-auth");
-const WasherController = require("../controllers/washerController");
+const washerController = require("../controllers/washerController");
 
 router.get(
   "/findAvailable",
   [checkAuth.verifyToken, checkAuth.isAdmin],
-  WasherController.findAvailable
+  washerController.findAvailable
 );
 
 router.get(
   "/findAll",
   [checkAuth.verifyToken, checkAuth.isAdmin],
-  WasherController.findAll
+  washerController.findAll
 );
 
 module.exports = router;

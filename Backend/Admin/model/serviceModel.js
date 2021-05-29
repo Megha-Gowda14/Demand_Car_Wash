@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const serviceSchema = mongoose.Schema({
   serviceType: {
     type: String,
-    //max: 15,
+    max: 15,
     required: true,
   },
   name: {
@@ -21,7 +21,7 @@ const serviceSchema = mongoose.Schema({
   description: {
     type: String,
     required: true,
-    //max: 30,
+    max: 30,
   },
   timeRequired: {
     type: String,
@@ -30,7 +30,7 @@ const serviceSchema = mongoose.Schema({
   where: {
     type: String,
     required: true,
-    //max: 20,
+    max: 20,
   },
 });
 

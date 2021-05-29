@@ -11,7 +11,7 @@ const carSchema = mongoose.Schema({
   brand: {
     type: String,
     required: true,
-  },
+  }
 });
 
 //export module
