@@ -20,9 +20,8 @@ router.put(
 );
 
 router.delete(
-  "/deleteAccount/:custId",
+  '/deleteAccount/:custId',
   //[checkAuth.verifyToken, checkAuth.isCustomer],
-  AccountController.deleteCustomer
-);
+  AccountController.deleteProfile);
 
 module.exports = router;
