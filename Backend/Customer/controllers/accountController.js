@@ -3,13 +3,12 @@ const Customer = require("../model/customerModel");
 //Profile update
 exports.updateProfile = (req, res) => {
   const id = req.params.custId;
-  Customer.updateOne({ _id: id }, { $set: req.body })
+  Customer.findByIdAndUpdate({ _id: id },req.body )
     .exec()
-    .then((response) => {
-      console.log("Profile Updated Successfully: " + response);
-      res.status(200).json({
-        message: " Profile Updated Successfully",
-        response,
+    .then(() => {
+      Customer.findOne({_id:req.params.id}).then(function(customer){
+        res.send(customer);
+      console.log("Profile Updated Successfully: ");
       });
     })
     .catch((err) => {
@@ -55,6 +54,7 @@ exports.getAllCustomers = (req, res) => {
 };
 */
 
+/*
 exports.findCustById = (req, res) => {
   Customer.findById({ _id: req.params.custId })
     .select("name email _id")
@@ -77,8 +77,9 @@ exports.findCustById = (req, res) => {
       });
     });
 };
+*/
 
-exports.deleteCustomer = (req, res) => {
+exports.deleteProfile = (req, res) => {
   Customer.deleteOne({ _id: req.params.custId })
     .exec()
     .then((result) => {
