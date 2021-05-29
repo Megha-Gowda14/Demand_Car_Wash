@@ -18,11 +18,11 @@ app.listen(port, () => {
   console.log("Listening on Admin MS Port: " + port);
 });
 
-
+//mongodb connection
 mongoose.connect(
   `mongodb+srv://Megha:Meghagtg0904@cluster0.4bvwy.mongodb.net/Admin?retryWrites=true&w=majority`,
     { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }
-  )
+)
   .catch((err) => {
     console.log("Database Connection Error: " + err);
   });
@@ -34,6 +34,8 @@ db.once("open", function () {
 });
 
 app.use(bodyParser.urlencoded({ extended: false }));
+
+//parse requests of content-type -application json
 app.use(bodyParser.json());
 
 //For preventing CORS ERRORS  (Postman is just a testing tool)
