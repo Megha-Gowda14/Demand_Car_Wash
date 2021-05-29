@@ -17,68 +17,7 @@ exports.updateProfile = (req, res) => {
     });
 };
 
-/*
-exports.getAllCustomers = (req, res) => {
-  Customer.find()
-    .select("name email _id")
-    .exec()
-    .then((results) => {
-      const response = {
-        count: results.length,
-        products: results.map((result) => {
-          return {
-            name: result.name,
-            email: result.email,
-            _id: result._id,
-            request: {
-              type: "GET",
-              url:
-                "http://localhost:8080/customer/account/findCustById/" +
-                result._id,
-            },
-          };
-        }),
-      };
-      if (results.length > 0) {
-        res.status(200).json(response);
-      } else {
-        res.status(200).json("Empty List");
-      }
-    })
-    .catch((err) => {
-      console.log("Get All Customers Error" + err);
-      res.status(500).json({
-        error: err,
-      });
-    });
-};
-*/
-
-/*
-exports.findCustById = (req, res) => {
-  Customer.findById({ _id: req.params.custId })
-    .select("name email _id")
-    .exec()
-    .then((result) => {
-      if (result) {
-        return res.status(200).json({
-          name: result.name,
-          email: result.email,
-          _id: result._id,
-        });
-      } else {
-        return res.status(404).json({ message: "Invalid Id" });
-      }
-    })
-    .catch((err) => {
-      console.log("FInd Customer By Id: " + err);
-      res.status(500).json({
-        error: err,
-      });
-    });
-};
-*/
-
+//Profile Delete
 exports.deleteProfile = (req, res) => {
   Customer.deleteOne({ _id: req.params.custId })
     .exec()

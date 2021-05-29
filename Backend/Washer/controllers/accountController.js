@@ -2,13 +2,12 @@ const MemberModel = require("../model/memberModel");
 
 exports.updateProfile = (req, res) => {
   const id = req.params.washId;
-  MemberModel.updateMany({ _id: id }, { $set: req.body })
+  MemberModel.findByIdAndUpdate({ _id: id },req.body )
     .exec()
-    .then((response) => {
-      console.log("Profile Updated Successfully: " + response);
-      res.status(200).json({
-        message: " Profile Updated Successfully",
-        response,
+    .then(() => {
+      MemberModel.findOne({_id:req.params.id}).then(function(washer){
+        res.send(washer);
+      console.log("Profile Updated Successfully: ");
       });
     })
     .catch((err) => {
@@ -17,6 +16,7 @@ exports.updateProfile = (req, res) => {
     });
 };
 
+//Profile delete
 exports.deleteProfile = (req, res) => {
   const id = req.params.washId;
   MemberModel.deleteOne({ _id: id })
