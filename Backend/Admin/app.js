@@ -22,7 +22,7 @@ app.listen(port, () => {
 
 //mongodb connection
 mongoose.connect(
-  `mongodb+srv://Megha:Meghagtg0904@cluster0.4bvwy.mongodb.net/Admin?retryWrites=true&w=majority`,
+  `mongodb+srv://Megha:Meghagtg0904@cluster0.4bvwy.mongodb.net/owner?retryWrites=true&w=majority`,
     { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }
 )
   .catch((err) => {

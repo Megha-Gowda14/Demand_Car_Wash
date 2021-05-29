@@ -1,6 +1,6 @@
 const Washer = require("../model/memberModel");
 
-//FInd Available Mechanics
+//FInd Available washers
 exports.findAvailable=(req,res)=>{
   Washer.find({
       role:"WASHER",
