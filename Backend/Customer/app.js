@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 
 const authRoutes = require("./services/authServices");
 const accountRoutes = require("./services/accountServices");
-const orderRoutes = require("./services/orderServices");
+//const orderRoutes = require("./services/orderServices");
 
 //port connection
 const port = process.env.PORT || 4001;
@@ -55,7 +55,7 @@ app.use((req, res, next) => {
 //Every request from customer route goes through this url : /customer
 app.use("/customer/auth", authRoutes);
 app.use("/customer/account", accountRoutes);
-app.use("/customer/order", orderRoutes);
+//app.use("/customer/order", orderRoutes);
 
 //Error Handling
 app.use((req, res, next) => {
