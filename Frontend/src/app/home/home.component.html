@@ -1,1 +1,49 @@
-<p>home works!</p>
+<mat-tab-group mat-align-tabs="end" animationDuration="700ms" backgroundColor="primary">
+    <mat-tab label="Home" img src="assets/images/logo.png">
+      <mat-icon><img src="assets/images/logo.png"></mat-icon>
+        <div class="container">
+        <img src="assets/images/banner.png" class="container_img">
+        </div>
+       
+        <br>
+        <div class="whyus">
+        
+           <h1 class="heading">Why Choose Us</h1>
+           <br>
+           <p class="para">
+            * Tell us about your car location, and we will come to you. With Clear Car Wash, you can get your
+             car washed wherever you are at your convenience. Whether it's your home, salon, office, or
+              any other place, your car wash is just a few taps away.</p>
+              <p class="para">
+               * A washer will come to your location and give your vehicle a premium wash. The app also contains
+                various packages and add-ons to wipe, clean, and dress your entire car from inside out.
+                 One of the app's best parts is that users can even schedule future car wash and give 
+                 reviews and ratings to washers. Just download the app now and book your first car wash today.
+             </p>
+            <div class="row">
+                <div class="column">
+                  <img src="assets/images/bstService.jpg" class="img" style="width:30%" paddingright="30px">
+                </div>
+
+                <div class="column">
+                  <img src="assets/images/bstPrice.jpg" class="img" style="width:30%">
+                </div>
+
+                <div class="column">
+                  <img src="assets/images/satis.jpg" class="img" style="width:30%">
+                </div>
+              </div>
+        </div>
+</mat-tab>
+
+    <mat-tab label="Services">Car Services</mat-tab>
+
+    <mat-tab label="About US">
+      <app-aboutus></app-aboutus>
+          </mat-tab>
+
+          <mat-tab label="Contact Us">contact page</mat-tab>
+
+          <mat-tab label="LOGOUT">customer logout</mat-tab>
+    
+  </mat-tab-group>

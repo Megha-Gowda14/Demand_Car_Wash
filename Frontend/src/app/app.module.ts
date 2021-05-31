@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';  
 import { SignupLoginComponent } from './signup-login/signup-login.component';
 
+
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
@@ -18,12 +19,15 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     SignupLoginComponent,
-    HomeComponent
+    HomeComponent,
+    AboutusComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,52 @@
+.container {
+    height: 48%;
+    width: 100%;
+}
+
+.container_img {
+    height: 100%;
+    width: 100%;
+    object-fit:cover;
+} 
+
+.example-button-toggle-label {
+    display: inline-block;
+    margin: 26px;
+    
+  }
+
+
+  .heading{
+      color: black;
+      font-family: cursive;
+      font-size: 200%;
+      font-weight: 100;
+      text-align: center;
+      }
+
+.para{
+    color: black;
+    font-weight: 50;
+    font-size: large;
+    font-family: monospace;
+      }
+
+      .column {
+        float: left;
+        width: 25%;
+        padding: 63px;
+        
+      }
+      
+      
+      .row::after {
+        content: "";
+        clear: both;
+        display:flex;
+        
+      }
+
+      .img{
+          border-radius: 50%;
+          border-style: dotted;
+      }
