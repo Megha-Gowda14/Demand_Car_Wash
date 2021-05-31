@@ -1,4 +1,5 @@
-<mat-tab-group mat-align-tabs="end" backgroundColor="primary" >
+
+<mat-tab-group mat-align-tabs="end" animationDuration="900ms" backgroundColor="primary" >
   <mat-tab label="Home" >
       <mat-icon><img src="assets/images/logo.png"></mat-icon>
         <div class="banner">
@@ -43,7 +44,9 @@
       <app-aboutus></app-aboutus>
           </mat-tab>
 
-          <mat-tab label="Contact Us">contact page</mat-tab>
+          <mat-tab label="Contact Us">
+          <app-contactus></app-contactus>
+        </mat-tab>
 
 
           <mat-tab label="LOGOUT">customer logout</mat-tab>

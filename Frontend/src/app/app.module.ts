@@ -20,6 +20,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { ContactusComponent } from './contactus/contactus.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -27,7 +30,10 @@ import { AboutusComponent } from './aboutus/aboutus.component';
     AppComponent,
     SignupLoginComponent,
     HomeComponent,
-    AboutusComponent
+    AboutusComponent,
+    ContactusComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
