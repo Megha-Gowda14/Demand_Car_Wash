@@ -17,11 +17,13 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
 
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignupLoginComponent
+    SignupLoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
