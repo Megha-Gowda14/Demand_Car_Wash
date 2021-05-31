@@ -1,20 +1,13 @@
-.container {
+.banner {
     height: 48%;
     width: 100%;
 }
 
-.container_img {
+.banner_img {
     height: 100%;
     width: 100%;
     object-fit:cover;
 } 
-
-.example-button-toggle-label {
-    display: inline-block;
-    margin: 26px;
-    
-  }
-
 
   .heading{
       color: black;
