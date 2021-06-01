@@ -24,6 +24,7 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { CustomerComponent } from './customer/customer.component';
+import { OwlModule } from 'ngx-owl-carousel';
 
 
 
@@ -54,7 +55,8 @@ import { CustomerComponent } from './customer/customer.component';
     MatIconModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    OwlModule
       ],
       providers: [],
       bootstrap: [AppComponent]
