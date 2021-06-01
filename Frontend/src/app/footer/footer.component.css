@@ -2,9 +2,9 @@ footer p {
     font-family: calibri;
   }
   footer p:nth-child(1) {
-    font-size: 30px;
+    font-size: 10px;
     font-weight: bold;
-    color:white;
+    color:black;
     line-height: 10px;
   }
   footer p:nth-child(2) {
