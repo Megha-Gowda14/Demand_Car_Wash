@@ -16,9 +16,7 @@
 body {
 	background: #263238;  /* Set background color to #263238*/
 }
-.ContactImage{
-	float:right;
-}
+
 .img{
 	float: left;
 }
@@ -49,7 +47,7 @@ label {
 
 /* Add styles to 'input' and 'textarea' selectors */
 input[type=text],input[type=email], textarea {
-    
+    width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;

@@ -29,7 +29,7 @@ export class SignupLoginComponent implements OnInit {
         if(result.success){
           console.log(result);
           alert(result.message);
-          this.gotohome('home');
+          this.router.navigate(['']);
         }
         else{
           alert(result.message);
