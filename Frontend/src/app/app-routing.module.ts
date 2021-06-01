@@ -3,11 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { SignupLoginComponent  } from './signup-login/signup-login.component';
 import { HomeComponent} from './home/home.component';
 import { CustomerComponent } from './customer/customer.component';
+import { WasherComponent } from './washer/washer.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
-  {path:'customer',component: CustomerComponent}
+  {path:'customer',component: CustomerComponent},
+  {path:'washer',component:WasherComponent},
+  {path:'admin',component:AdminComponent}
   
 ];
 

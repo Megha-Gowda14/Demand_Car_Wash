@@ -26,6 +26,8 @@ import { FooterComponent } from './footer/footer.component';
 import { CustomerComponent } from './customer/customer.component';
 import { OwlModule } from 'ngx-owl-carousel';
 import { ServicesComponent } from './services/services.component';
+import { WasherComponent } from './washer/washer.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 
@@ -40,6 +42,8 @@ import { ServicesComponent } from './services/services.component';
     FooterComponent,
     CustomerComponent,
     ServicesComponent,
+    WasherComponent,
+    AdminComponent,
   
   ],
   imports: [
