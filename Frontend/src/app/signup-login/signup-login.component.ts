@@ -23,23 +23,4 @@ export class SignupLoginComponent implements OnInit {
     });
   }
 
-  loginProcess(){
-    if(this.formGroup.valid){
-      this.authService.login(this.formGroup.value).subscribe(result=>{
-        if(result.success){
-          console.log(result);
-          alert(result.message);
-          this.router.navigate(['']);
-        }
-        else{
-          alert(result.message);
-        }
-      });
-    }
-  }
-
-    gotohome(pageName:string):void{
-    this.router.navigate([`${pageName}`])
-  }
-
 }
