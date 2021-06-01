@@ -12,7 +12,7 @@ exports.addCar = (req, res) => {
       } else {
         const car = new Carmodel({
           name: req.body.name,
-          brand: req.body.brand,
+         // brand: req.body.brand,
         });
         car.save()
           .then((response) => {
@@ -20,7 +20,7 @@ exports.addCar = (req, res) => {
           res.status(201).json({
             message: "Car Added Successfully",
             car: {
-              brand: response.brand,
+             // brand: response.brand
               name: response.name,
               _id: response._id,
             }
@@ -58,6 +58,7 @@ exports.findAllCars = (req, res) => {
     });
 }
 
+/*
 //Find All Brands
 exports.findAllBrands = (req, res) => {
   Carmodel.find()
@@ -105,6 +106,7 @@ exports.findByBrand = (req, res) => {
       });
     });
 };
+*/
 
 //FInd Car By Name
 exports.findByCarId = (req, res) => {
