@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+
+.whyus{
+
+    font-family: 'Oswald', sans-serif;
+  }
+
+  .heading{
+    color: black;
+    
+    font-size: 300%;
+    
+    font-weight: bolder;
+    text-align: center;
+    }
+
+.para{
+  color: black;
+  font-weight: 100;
+  font-size: large;
+ 
+    }
+
+    .column {
+      float: left;
+      width: 25%;
+      padding: 63px;
+      
+    }
+    
+    
+    .row::after {
+      content: "";
+      clear: both;
+      display:flex;
+      
+    }
+
+    .img{
+        border-radius: 50%;
+        border-style: dotted;
+    }
