@@ -23,6 +23,7 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { CustomerComponent } from './customer/customer.component';
 
 
 
@@ -35,6 +36,7 @@ import { FooterComponent } from './footer/footer.component';
     ContactusComponent,
     HeaderComponent,
     FooterComponent,
+    CustomerComponent,
   
   ],
   imports: [
