@@ -22,10 +22,10 @@ export class SignupLoginComponent implements OnInit {
       password : new FormControl('',[Validators.required])
     });
   }
-  login(){
+  /*login(){
     if(this.formGroup.valid){
       this.authService.login(this.formGroup.value).subscribe(result=>{
-        if(result.success){
+        if(result.role=="CUSTOMER"){
           console.log(result);
           alert(result.message);
           this.router.navigate(['customer']);
@@ -34,7 +34,7 @@ export class SignupLoginComponent implements OnInit {
           }
       });
     }
-  }
+  }*/
   gotohomepage(pageName:string):void{
   this.router.navigate([`${pageName}`])
 }
