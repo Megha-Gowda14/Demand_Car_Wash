@@ -29,8 +29,7 @@ const serviceSchema = mongoose.Schema({
   },
   where: {
     type: String,
-    required: true,
-    max: 20,
+    max: 25,
   },
 });
 
