@@ -28,6 +28,7 @@ import { OwlModule } from 'ngx-owl-carousel';
 import { ServicesComponent } from './services/services.component';
 import { WasherComponent } from './washer/washer.component';
 import { AdminComponent } from './admin/admin.component';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
 
 
 
@@ -62,7 +63,8 @@ import { AdminComponent } from './admin/admin.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    OwlModule
+    OwlModule,
+    MatCarouselModule.forRoot()
       ],
       providers: [],
       bootstrap: [AppComponent]
