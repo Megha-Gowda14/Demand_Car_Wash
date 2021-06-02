@@ -29,6 +29,7 @@ import { ServicesComponent } from './services/services.component';
 import { WasherComponent } from './washer/washer.component';
 import { AdminComponent } from './admin/admin.component';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
+import { PackageComponent } from './package/package.component';
 
 
 
@@ -45,6 +46,7 @@ import { MatCarouselModule } from '@ngmodule/material-carousel';
     ServicesComponent,
     WasherComponent,
     AdminComponent,
+    PackageComponent,
   
   ],
   imports: [

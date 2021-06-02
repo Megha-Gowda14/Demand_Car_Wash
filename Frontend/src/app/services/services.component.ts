@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 export class Car{
   constructor(
@@ -19,8 +21,7 @@ export class ServicesComponent implements OnInit {
 
   cars ! : Car[];
   constructor(
-    private httpClient: HttpClient
-  ) { }
+    private httpClient: HttpClient,private router:Router) { }
 
   ngOnInit(): void {
     this.getCars();
@@ -34,5 +35,9 @@ export class ServicesComponent implements OnInit {
         
       }
     );
+    }
+    gotopackage(pageName:String):void{
+      this.router.navigate([`${pageName}`])
+    }
   }
-}
+

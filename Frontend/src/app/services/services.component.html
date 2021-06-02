@@ -1,4 +1,3 @@
-
 <div >
     <img src="assets/images/carwash-2.gif" 
     width="100%" height="450" class="center" >
@@ -12,7 +11,9 @@
     <table>
         <tbody>
             <td *ngFor="let car of cars">
-                <tr ><button  mat-raised-button color="accent" >{{car.name}}</button></tr>
+                <div padding-left:40px >
+                <tr ><button (click)="gotopackage('package')" mat-raised-button color="accent" >{{car.name}}</button></tr>
+                </div>
             </td>
         </tbody>
     </table>
