@@ -38,7 +38,7 @@ exports.addService=(req,res)=>{
 
 exports.findAll=(req,res)=>{
   Servicemodel.find()
-  .select("-__v")
+  //.select("-__v")
   .exec()
   .then((response)=>{
       if(response.length==0){

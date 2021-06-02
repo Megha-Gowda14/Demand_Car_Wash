@@ -38,5 +38,7 @@ export class SignupLoginComponent implements OnInit {
   gotohomepage(pageName:string):void{
   this.router.navigate([`${pageName}`])
 }
-
+gotomember(pageName:string):void{
+  this.router.navigate([`${pageName}`])
+}
 }

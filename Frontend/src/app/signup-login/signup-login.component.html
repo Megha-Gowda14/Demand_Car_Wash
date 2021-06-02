@@ -45,7 +45,8 @@
                   >
                   Sign In
                 </button>
-                <a href="#">Sign in as a member?</a>
+                <div class="member">
+                  <button (click)="gotomember('member')" >login as member </button></div>
               </form>
             </mat-card-content>
         </mat-tab>
@@ -101,6 +102,8 @@
                 <mat-icon matSuffix>lock</mat-icon>
   
               </mat-form-field>
+
+
               <mat-form-field>
                   <input
                   matInput
@@ -123,7 +126,8 @@
                 class="login-button">
                 Sign Up
               </button>
-              <a href="#">Sign up as a member?</a>
+             <div class="member">
+                <button >SignUp as member </button></div>
             </form>
             
           </mat-card-content>
