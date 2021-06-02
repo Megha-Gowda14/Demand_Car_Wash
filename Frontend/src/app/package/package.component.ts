@@ -22,6 +22,7 @@ export class Service{
   templateUrl: './package.component.html',
   styleUrls: ['./package.component.css']
 })
+
 export class PackageComponent implements OnInit { 
 
   services!:Service[];
@@ -36,8 +37,10 @@ export class PackageComponent implements OnInit {
     this.httpClient.get<any>('http://localhost:4003/admin/car-services/findAll').subscribe(
       response=>{
         console.log(response);
-       this.services=response;
+       this.services=response.data;
+     
       }
     );
 }
 }
+
