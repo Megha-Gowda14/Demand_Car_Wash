@@ -6,6 +6,7 @@ import { CustomerComponent } from './customer/customer.component';
 import { WasherComponent } from './washer/washer.component';
 import { AdminComponent } from './admin/admin.component';
 import { PackageComponent } from './package/package.component';
+import { MemberComponent } from './member/member.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path:'customer',component: CustomerComponent},
   {path:'washer',component:WasherComponent},
   {path:'admin',component:AdminComponent},
-  {path:'package' , component:PackageComponent}
+  {path:'package' , component:PackageComponent},
+  {path:'member',component:MemberComponent},
 ];
 
 

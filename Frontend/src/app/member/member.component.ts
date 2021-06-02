@@ -29,14 +29,14 @@ export class MemberComponent implements OnInit {
         if(result.role=="ADMIN"){
           console.log(result);
           alert(result.message);
-          this.router.navigate(['adash']);
+          this.router.navigate(['admin']);
           }else{
             alert(result.message);
           }
       });
     }
   }
-  gotoadash(pageName:string):void{
+  gotoadmin(pageName:string):void{
     this.router.navigate([`${pageName}`])
   }
 

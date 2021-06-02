@@ -6,7 +6,7 @@
       <mat-card-content>
         <mat-tab-group>
           <mat-tab label="Login">
-            <form [formGroup]="formGroup" (ngSubmit)="memberlogin();gotoadash('adash')">
+            <form [formGroup]="formGroup" (ngSubmit)="memberlogin();gotoadmin('admin')">
             <mat-form-field class="example-full-width">
               <mat-label>Email</mat-label>
               <input type="email" matInput placeholder="Email" >
