@@ -7,16 +7,10 @@ h1 { color: #321386;
     border-radius: 40px;
  }
 
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-  }
-
 .container {
-    border: none;
-    color: white;
+    margin-right: 40px;
+    border: turquoise;
+    color: rgb(15, 11, 11);
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;

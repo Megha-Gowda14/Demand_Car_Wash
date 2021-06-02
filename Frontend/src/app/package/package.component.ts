@@ -11,6 +11,7 @@ export class Service{
     public price: Number,
     public description: String,
     public timeRequied: String,
+    public where:string
   ){
 
   }
@@ -37,7 +38,7 @@ export class PackageComponent implements OnInit {
     this.httpClient.get<any>('http://localhost:4003/admin/car-services/findAll').subscribe(
       response=>{
         console.log(response);
-       this.services=response.data;
+       this.services=response.service;
      
       }
     );

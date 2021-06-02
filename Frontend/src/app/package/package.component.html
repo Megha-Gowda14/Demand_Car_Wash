@@ -1,14 +1,18 @@
-
 <br>
 <br>
 <br>
 <div class="text">
-    <h1>AVALIABLE SERVICES</h1>
-    <div class="container">
+    <h1><u><b><i>AVALIABLE SERVICES</i></b></u></h1>
+    <div class="container"></div>
     <table>
         <tbody>
-            <tr *ngFor="let service of services">
-                <td ><button>{{service.name}}</button></td>
+            <tr *ngFor="let service of services">              
+                    <h2>Service Name : {{service.name}}</h2>
+                        Service Type : {{service.serviceType}}<br>
+                        Description : {{service.description}}<br>
+                        Cost : {{service.price}}<br>
+                    <button><i>Select</i></button>
+                    <br><br>
             </tr>
         </tbody>
     </table>
