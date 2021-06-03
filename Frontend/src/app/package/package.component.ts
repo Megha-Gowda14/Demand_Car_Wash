@@ -43,5 +43,8 @@ export class PackageComponent implements OnInit {
       }
     );
 }
+gotoorder(pageName:string){
+  this.router.navigate([`${pageName}`])
+  }
 }
 

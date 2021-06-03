@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,12 +7,37 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  navLinks!: any[];
+  activeLinkIndex = -1;
 
-  constructor() { }
+  constructor(private router: Router) {
+    this.navLinks = [
+      {
+        label: 'Home',
+        link: '/home',
+        index: 0
+      },
+      {
+        label: 'About Us',
+        link: '/aboutus',
+        index: 1
+      },
+      {
+        label: 'Contact Us',
+        link: '/contactus',
+        index: 2
+      },
+      {
+        label: 'LOGIN',
+        link: '/login',
+        index: 3
+      },
+    ];
+   }
 
   ngOnInit(): void {
-  }
-
-  //homeSlider={items:1,dots:true,nav:true};
-
+    this.router.events.subscribe((res) => {
+      this.activeLinkIndex = this.navLinks.indexOf(this.navLinks.find(tab => tab.link === '.' + this.router.url));
+  });
+}
 }

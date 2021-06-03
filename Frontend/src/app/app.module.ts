@@ -31,6 +31,7 @@ import { AdminComponent } from './admin/admin.component';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { PackageComponent } from './package/package.component';
 import { MemberComponent } from './member/member.component';
+import { OrdersComponent } from './orders/orders.component';
 
 
 
@@ -49,6 +50,7 @@ import { MemberComponent } from './member/member.component';
     AdminComponent,
     PackageComponent,
     MemberComponent,
+    OrdersComponent,
   
   ],
   imports: [

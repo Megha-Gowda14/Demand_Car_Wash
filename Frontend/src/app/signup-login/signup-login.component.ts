@@ -22,22 +22,24 @@ export class SignupLoginComponent implements OnInit {
       password : new FormControl('',[Validators.required])
     });
   }
+
   login(){
     if(this.formGroup.valid){
       this.authService.login(this.formGroup.value).subscribe(result=>{
-        if(result.success){
+        if(result.role=="CUSTOMER"){
           console.log(result);
           alert(result.message);
           this.router.navigate(['customer']);
           }else{
+            console.log(result);
             alert(result.message);
           }
       });
     }
   }
-  gotohomepage(pageName:string):void{
+ /* gotohomepage(pageName:string):void{
   this.router.navigate([`${pageName}`])
-}
+}*/
 gotomember(pageName:string):void{
   this.router.navigate([`${pageName}`])
 }
