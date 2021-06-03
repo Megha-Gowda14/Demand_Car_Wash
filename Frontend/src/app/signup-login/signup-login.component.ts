@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthServiceService } from '../auth-service.service';
 import { Router} from '@angular/router';
+import { OrderService } from '../order.service';
 
 @Component({
   selector: 'app-signup-login',
@@ -11,7 +12,7 @@ import { Router} from '@angular/router';
 export class SignupLoginComponent implements OnInit {
   formGroup!: FormGroup;
 
-  constructor(private authService:AuthServiceService,private router:Router) { }
+  constructor(private authService:AuthServiceService,private router:Router,private personaldetail:OrderService) { }
 
   ngOnInit(){
     this.initForm();
@@ -36,6 +37,7 @@ export class SignupLoginComponent implements OnInit {
           }
       });
     }
+    this.personaldetail.emit<any>(this.formGroup.value);
   }
  /* gotohomepage(pageName:string):void{
   this.router.navigate([`${pageName}`])
