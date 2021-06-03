@@ -6,16 +6,16 @@
   }
 
   .heading{
-    color: black;
+    color: rgba(216, 58, 58, 0.678);
     
     font-size: 300%;
     
-    font-weight: bolder;
+    font-weight: bold;
     text-align: center;
     }
 
 .para{
-  color: black;
+  color: rgb(85, 113, 116);
   font-weight: 100;
   font-size: large;
  
