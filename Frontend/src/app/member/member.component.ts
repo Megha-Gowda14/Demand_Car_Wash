@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { PlaceOrderService} from '../place-order.service';
+import { AuthServiceService } from '../auth-service.service';
 import { Router} from '@angular/router';
 
 @Component({
@@ -11,7 +11,7 @@ import { Router} from '@angular/router';
 export class MemberComponent implements OnInit {
   formGroup!:FormGroup;
 
-  constructor(private memberService:PlaceOrderService,private router:Router) { }
+  constructor(private authService:AuthServiceService,private router:Router) { }
 
   ngOnInit(): void {
     this.initForm();
@@ -23,9 +23,10 @@ export class MemberComponent implements OnInit {
       password:new FormControl('',[Validators.required])
     });
   }
+
   memberlogin(){
     if(this.formGroup.valid){
-      this.memberService.login(this.formGroup.value).subscribe(result=>{
+      this.authService.memberlogin(this.formGroup.value).subscribe(result=>{
         if(result.role=="ADMIN"){
           console.log(result);
           alert(result.message);
@@ -36,8 +37,22 @@ export class MemberComponent implements OnInit {
       });
     }
   }
+  washerlogin(){
+    if(this.formGroup.valid){
+      this.authService.washerlogin(this.formGroup.value).subscribe(result=>{
+        if(result.role=="WASHER"){
+          console.log(result);
+          alert(result.message);
+          this.router.navigate(['washer']);
+          }else{
+            alert(result.message);
+          }
+      });
+    }
+  }
+  /*
   gotoadmin(pageName:string):void{
     this.router.navigate([`${pageName}`])
-  }
+  }*/
 
 }

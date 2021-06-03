@@ -7,7 +7,9 @@ export const environment = {
 };
 
 export const baseUrl = 'http://localhost:4001/customer';
-export const url='http://localhost:4003/admin/';
+export const url='http://localhost:4003/admin';
+export const wUrl='http://localhost:4002/washer';
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
