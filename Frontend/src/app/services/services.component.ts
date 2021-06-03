@@ -44,16 +44,10 @@ export class ServicesComponent implements OnInit {
       this.selectedcar=event.target.value;
       console.log(this.selectedcar);
       this.orderservice.emit<any>(this.selectedcar);
-      this.gotomodel('package');
+      this.gotopackage('package');
       //this.router.navigate(['carmodel']);
       
     }
-    gotomodel(pageName:string):void{
-      this.router.navigate([`${pageName}`])
-  
-    }
-  
-
     gotopackage(pageName:String):void{
       this.router.navigate([`${pageName}`])
     }
