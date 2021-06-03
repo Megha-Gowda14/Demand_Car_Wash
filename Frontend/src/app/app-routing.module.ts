@@ -17,7 +17,7 @@ const routes: Routes = [
   {path:'admin',component:AdminComponent},
   {path:'package' , component:PackageComponent},
   {path:'member',component:MemberComponent},
-  {path:'order',component:OrdersComponent}
+  {path:'orders',component:OrdersComponent}
 ];
 
 

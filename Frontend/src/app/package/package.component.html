@@ -7,12 +7,20 @@
     <table>
         <tbody>
             <tr *ngFor="let service of services">              
-                    <h2>Service Name : {{service.name}}</h2>
-                        Service Type : {{service.serviceType}}<br>
-                        Description : {{service.description}}<br>
-                        Cost : {{service.price}}<br>
-                    <button (click)="gotoorder('order')" mat-raised-button color="warn"><i>Select Service</i></button>
-                    <br><br>
+                   <td>
+                       <h2>{{service.serviceType}}</h2>
+                        <button>{{service.name}}
+                                {{service.price}}<br>
+                                {{service.description}}<br>
+                               <!--{{service.timeRequired}}<br>-->
+                                {{service.where}}<br>
+                                <input class="button" type="button"  
+                                    value="{{service.name}},{{service.price}}"
+                                    (click)="selectedService($event)"
+                                    mat-raised-button color="warn">
+                        
+                        </button>
+                    </td>
             </tr>
         </tbody>
     </table>
