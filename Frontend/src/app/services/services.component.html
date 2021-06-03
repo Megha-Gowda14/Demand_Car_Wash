@@ -6,8 +6,8 @@
 <br>
 <br>
 <div class="text">
-    <h1>AVALIABLE CARS</h1>
-    <div class="container">
+    <h1>AVALIABLE CARS</h1></div>
+   <!--<div class="container">
     <table>
         <tbody>
             <td *ngFor="let car of cars">
@@ -17,4 +17,8 @@
             </td>
         </tbody>
     </table>
+</div>-->
+
+<div *ngFor="let car of cars">
+  <input type="button" value="{{car.name}}" (click)="buttonChangeHandler($event)" mat-raised-button color="warn">
 </div>

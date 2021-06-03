@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { OrderService } from '../order.service';
 
 
 export class Car{
@@ -19,15 +20,17 @@ export class Car{
 })
 export class ServicesComponent implements OnInit {
 
-  cars ! : Car[];
+  selectedcar:any='';
+  cars:Car[]=[];
+
   constructor(
-    private httpClient: HttpClient,private router:Router) { }
+    private httpClient: HttpClient,private router:Router,private orderservice:OrderService) { }
 
   ngOnInit(): void {
-    this.getCars();
+    this.getCar();
   }
 
-  getCars(){
+  getCar(){
     this.httpClient.get<any>('http://localhost:4003/admin/car-func/findAll').subscribe(
       response=>{
         console.log(response);
@@ -36,6 +39,21 @@ export class ServicesComponent implements OnInit {
       }
     );
     }
+
+    buttonChangeHandler (event:any){
+      this.selectedcar=event.target.value;
+      console.log(this.selectedcar);
+      this.orderservice.emit<any>(this.selectedcar);
+      this.gotomodel('package');
+      //this.router.navigate(['carmodel']);
+      
+    }
+    gotomodel(pageName:string):void{
+      this.router.navigate([`${pageName}`])
+  
+    }
+  
+
     gotopackage(pageName:String):void{
       this.router.navigate([`${pageName}`])
     }
