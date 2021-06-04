@@ -11,7 +11,7 @@ export class Service{
     public name: String,
     public price: Number,
     public description: String,
-    public timeRequied: String,
+    public timeRequired: String,
     public where:string
   ){
 
