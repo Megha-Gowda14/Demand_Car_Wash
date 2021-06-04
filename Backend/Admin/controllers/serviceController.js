@@ -80,6 +80,7 @@ exports.updateService=(req,res)=>{
   });
 }
 
+
 exports.deleteService=(req,res)=>{
   const id=req.params.serviceId;
   Servicemodel.deleteOne({_id:id})
@@ -96,6 +97,7 @@ exports.deleteService=(req,res)=>{
       });
   });
 }
+
 
 exports.findByServiceId=(req,res)=>
 {

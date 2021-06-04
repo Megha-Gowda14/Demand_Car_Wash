@@ -22,7 +22,7 @@ export class SignupLoginComponent implements OnInit {
       name:new FormControl('',[Validators.required]),
       email : new FormControl('',[Validators.required]),
       password : new FormControl('',[Validators.required]),
-      repassword:  new FormControl('',[Validators.required])
+    
     });
   }
 
@@ -48,7 +48,7 @@ gotomember(pageName:string):void{
   this.router.navigate([`${pageName}`])
 }
 
-onSubmit(){
+/*onSubmit(){
   console.log(this.formGroup.value);
-}
+}*/
 }
