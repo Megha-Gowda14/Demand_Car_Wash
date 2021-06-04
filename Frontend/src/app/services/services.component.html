@@ -19,6 +19,6 @@
     </table>
 </div>-->
 
-<div *ngFor="let car of cars">
-  <input type="button" value="{{car.name}}" (click)="buttonChangeHandler($event)" mat-raised-button color="warn">
+<div class="navitem" *ngFor="let car of cars" >
+  <input type="button" STYLE="background-color:palevioletred" value="{{car.name}}" (click)="buttonChangeHandler($event)" mat-raised-button>
 </div>
