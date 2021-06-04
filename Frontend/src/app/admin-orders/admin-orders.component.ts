@@ -36,7 +36,7 @@ export class AdminOrdersComponent implements OnInit {
   }
 
   getOrders(){
-    this.httpClient.get<any>('http://localhost:4003/admin/car-services/findAll').subscribe(
+    this.httpClient.get<any>('http://localhost:4003/admin/order/findPlacedOrder').subscribe(
       response=>{
         console.log(response);
        this.orders=response.order;
