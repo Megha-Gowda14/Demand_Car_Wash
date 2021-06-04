@@ -1,0 +1,39 @@
+<br>
+<br>
+<h1 align="center">Services Avaliable</h1>
+<div class="container">
+    <div class="border">
+        <button class="btn btn-md btn-outline-primary" >
+          <i id="myicon" class="fa fa-user"></i>New service</button>
+    </div>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Sl.No</th>
+                <th>Service Name</th>
+                <th>Service Type</th>
+                <th>Description</th>
+                <th>Time</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let service of services; let i=index">
+                <td><span>{{i+1}}</span></td>
+                <td><span>{{service.name}}</span></td>
+                <td><span>{{service.serviceType}}</span></td>
+                <td><span>{{service.description}}</span></td>
+                <td><span>{{service.timeRequired}}</span></td>
+                <td><span>{{service.price}}</span></td>
+                <td>
+                    <button class="btn btn-sm btn-info">
+                      <i class="fa fa-search"></i>Details</button>
+                    <button class="btn btn-sm btn-warning">
+                      <i class="fa fa-edit"></i>Edit</button>
+                    <button class="btn btn-sm btn-danger">
+                      <i class="fa fa-remove"></i>Delete</button>
+                  </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

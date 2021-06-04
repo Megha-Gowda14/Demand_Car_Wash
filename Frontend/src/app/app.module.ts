@@ -33,6 +33,7 @@ import { PackageComponent } from './package/package.component';
 import { MemberComponent } from './member/member.component';
 import { OrdersComponent } from './orders/orders.component';
 import { AdmincarComponent } from './admincar/admincar.component';
+import { AdminservicesComponent } from './adminservices/adminservices.component';
 
 
 
@@ -53,6 +54,7 @@ import { AdmincarComponent } from './admincar/admincar.component';
     MemberComponent,
     OrdersComponent,
     AdmincarComponent,
+    AdminservicesComponent,
   
   ],
   imports: [
