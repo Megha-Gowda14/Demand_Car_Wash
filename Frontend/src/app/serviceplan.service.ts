@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject,Observable} from 'rxjs';
+import { Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class OrderService {
+export class ServiceplanService {
 
   public _subject=new BehaviorSubject<any>('');
-  
+
   emit<T>(data:T){
     this._subject.next(data);
   }
@@ -15,6 +16,5 @@ export class OrderService {
   on<T>():Observable<T>{
     return this._subject.asObservable();
   }
-}
 
- 
+}

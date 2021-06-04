@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthServiceService } from '../auth-service.service';
 import { Router} from '@angular/router';
-import { OrderService } from '../order.service';
+import { PersonaldetailService } from '../personaldeatil.service';
 
 @Component({
   selector: 'app-signup-login',
@@ -12,7 +12,7 @@ import { OrderService } from '../order.service';
 export class SignupLoginComponent implements OnInit {
   formGroup!: FormGroup;
 
-  constructor(private authService:AuthServiceService,private router:Router,private personaldetail:OrderService) { }
+  constructor(private authService:AuthServiceService,private router:Router,private personaldetail:PersonaldetailService) { }
 
   ngOnInit(){
     this.initForm();

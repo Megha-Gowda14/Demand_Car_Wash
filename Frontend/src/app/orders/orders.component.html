@@ -1,1 +1,53 @@
-<p>orders works!</p>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+<div class="section">
+        <div class="container">
+            <div class="content-section">
+                <div class="title">
+                    <h1>ORDER SUMMARRY</h1>
+                </div>
+                <div class="content">
+                    <mat-form-field>
+                        <input
+                            matInput
+                            placeholder="name"
+                            value="{{personaldetails.name}}">
+                    </mat-form-field>
+                    &nbsp;&nbsp;&nbsp;  
+                    <mat-form-field>
+                        <input
+                            matInput
+                            placeholder="Email id"
+                            value="{{personaldetails.email}}"
+                        >
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input
+                            matInput
+                            placeholder="cartype"
+                            value="{{cartype}}"
+                        >
+                    </mat-form-field>
+                    &nbsp;&nbsp;&nbsp;  
+                    <mat-form-field>
+                        <input
+                            matInput
+                            placeholder="serviceplan"
+                            value="{{serviceplanchosen}}"
+                        >
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Vehicle Number</mat-label>
+                        <input matInput placeholder="Vehicle Number">
+                    </mat-form-field>
+                    &nbsp;&nbsp;&nbsp;
+                    <mat-form-field appearance="fill">
+                        <mat-label>Address</mat-label>
+                            <input matInput placeholder="Address">
+                    </mat-form-field>
+                    <div class="button">
+                        <button (click)="orderplaced()" >PLACE ORDER </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
