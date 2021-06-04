@@ -35,6 +35,7 @@ import { OrdersComponent } from './orders/orders.component';
 import { AdmincarComponent } from './admincar/admincar.component';
 import { AdminservicesComponent } from './adminservices/adminservices.component';
 import { AdminOrdersComponent } from './admin-orders/admin-orders.component';
+import { AdminWasherComponent } from './admin-washer/admin-washer.component';
 
 
 
@@ -57,6 +58,7 @@ import { AdminOrdersComponent } from './admin-orders/admin-orders.component';
     AdmincarComponent,
     AdminservicesComponent,
     AdminOrdersComponent,
+    AdminWasherComponent,
   
   ],
   imports: [
