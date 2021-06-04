@@ -34,6 +34,7 @@ import { MemberComponent } from './member/member.component';
 import { OrdersComponent } from './orders/orders.component';
 import { AdmincarComponent } from './admincar/admincar.component';
 import { AdminservicesComponent } from './adminservices/adminservices.component';
+import { AdminOrdersComponent } from './admin-orders/admin-orders.component';
 
 
 
@@ -55,6 +56,7 @@ import { AdminservicesComponent } from './adminservices/adminservices.component'
     OrdersComponent,
     AdmincarComponent,
     AdminservicesComponent,
+    AdminOrdersComponent,
   
   ],
   imports: [

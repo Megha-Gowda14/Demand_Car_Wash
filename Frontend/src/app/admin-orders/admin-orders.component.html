@@ -1,0 +1,46 @@
+<br>
+<br>
+<h1 align="center">Orders</h1>
+<div class="container">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Sl.No</th>
+                <th>Customer Id</th>
+                <th>Customer Name</th>
+                <th>Car Name</th>
+                <th>Car Number</th>
+                <th>Customer Address</th>
+                <th>Service Name</th>
+                <th>Washer Id</th>
+                <th>Requested On</th>
+                <th>Delivered On</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let order of orders; let i=index">
+                <td><span>{{i+1}}</span></td>
+                <td><span>{{order.customerId}}</span></td>
+                <td><span>{{order.customerName}}</span></td>
+                <td><span>{{order.carName}}</span></td>
+                <td><span>{{order.carNumber}}</span></td>
+                <td><span>{{order.custAddress}}</span></td>
+                <td><span>{{order.serviceName}}</span></td>
+                <td><span>{{order.servicePrice}}</span></td>
+                <td><span>{{order.washerId}}</span></td>
+                <td><span>{{order.requestedOn}}</span></td>
+                <td><span>{{order.deliveredOn}}</span></td>
+                <td><span>{{order.status}}</span></td>
+                <td>
+                    <button class="btn btn-sm btn-info">
+                      <i class="fa fa-search"></i>Details</button>
+                    <button class="btn btn-sm btn-warning">
+                      <i class="fa fa-edit"></i>Edit</button>
+                    <button class="btn btn-sm btn-danger">
+                      <i class="fa fa-remove"></i>Delete</button>
+                  </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
