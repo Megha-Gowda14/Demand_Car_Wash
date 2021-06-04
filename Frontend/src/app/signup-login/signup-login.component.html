@@ -63,7 +63,7 @@
 
         <mat-tab label="Sign Up">
           <mat-card-content>
-            <form action="">
+            <form action="#" method="POST" (ngSubmit)="onSubmit()">
               <mat-form-field>
                 <input
                   matInput
@@ -135,8 +135,6 @@
                 class="login-button">
                 Sign Up
               </button>
-             <div class="member">
-                <button >SignUp as member </button></div>
             </form>
             
           </mat-card-content>

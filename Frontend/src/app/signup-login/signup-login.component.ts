@@ -21,7 +21,8 @@ export class SignupLoginComponent implements OnInit {
     this.formGroup = new FormGroup({
       name:new FormControl('',[Validators.required]),
       email : new FormControl('',[Validators.required]),
-      password : new FormControl('',[Validators.required])
+      password : new FormControl('',[Validators.required]),
+      repassword:  new FormControl('',[Validators.required])
     });
   }
 
@@ -45,5 +46,9 @@ export class SignupLoginComponent implements OnInit {
 }*/
 gotomember(pageName:string):void{
   this.router.navigate([`${pageName}`])
+}
+
+onSubmit(){
+  console.log(this.formGroup.value);
 }
 }
