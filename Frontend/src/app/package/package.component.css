@@ -8,15 +8,15 @@ h1 { color: #321386;
  }
 
 .container {
+    display: inline-block;
     margin-right: 40px;
+    padding: 40px 40px 40px 40px;
     border: turquoise;
     color: rgb(15, 11, 11);
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
-    cursor: pointer;
-    
+    cursor: pointer;  
   }
