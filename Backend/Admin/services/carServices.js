@@ -19,7 +19,7 @@ router.get("/findAll", CarController.findAllCars);
 //router.post("/findByBrand", CarController.findByBrand);
 
 //FInd Car By It's Name
-router.get("/findByCar/:carId", CarController.findByCarId);
+//router.get("/findByCar/:carId", CarController.findByCarId);
 
 //Update Car Details
 router.patch(
