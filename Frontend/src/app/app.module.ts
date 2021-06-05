@@ -37,6 +37,7 @@ import { AdminservicesComponent } from './adminservices/adminservices.component'
 import { AdminOrdersComponent } from './admin-orders/admin-orders.component';
 import { AdminWasherComponent } from './admin-washer/admin-washer.component';
 import { WasherOrdersComponent } from './washer-orders/washer-orders.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -80,7 +81,8 @@ import { WasherOrdersComponent } from './washer-orders/washer-orders.component';
     HttpClientModule,
     ReactiveFormsModule,
     OwlModule,
-    MatCarouselModule.forRoot()
+    MatCarouselModule.forRoot(),
+    NgbModule
       ],
       providers: [],
       bootstrap: [AppComponent]
