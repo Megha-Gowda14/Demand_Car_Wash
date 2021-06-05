@@ -1,45 +1,47 @@
-const Order = require("../model/orderModel");
+const Ordermodel = require("../model/orderModel");
 
 //TO place an Order
-exports.addOrder = (req, res) => {
-    const order=new Ordermodel({
-        name:req.body.name,
-        email:req.body.email,
-        carType:req.body.carType,
-        serviceplan:req.body.serviceplan,
-        vehicleNumber:req.body.vehiclenumber,
-        address:req.body.address,
-        requestedOn:req.body.requestedOn,
-        deliveredOn:req.body.deliveredOn,
-        status:req.body.status
-        });
-  order.save()
-    .then((result) => {
-      console.log("Order Placed: " + result);
-      res.status(201).json({
-        message: "Thank you for your order.",
-        order:{
-          _id:response._id,
-          name:response.name,
-          email:response.email,
-          carType:response.carType,
-          serviceplan:response.serviceplan,
-          vehiclenumber:response.vehiclenumber,
-          address:response.address,
-          requestedOn:response.requestedOn,
-          deliveredOn:response.deliveredOn,
-          status:response.status
+exports.addorder = (req, res) => {
+          const order=new Ordermodel({
+              name:req.body.name,
+              email:req.body.email,
+              carType:req.body.carType,
+              serviceplan:req.body.serviceplan,
+              vehicleNumber:req.body.vehiclenumber,
+              address:req.body.address,
+              requestedOn:req.body.requestedOn,
+              deliveredOn:req.body.deliveredOn,
+              status:req.body.status
+              });
+          order.save()
+              .then(response=>{
+                  console.log("placed order");
+                  res.status(201).json({
+                      message:"placed order successfully",
+                      order:{
+                          _id:response._id,
+                          name:response.name,
+                          email:response.email,
+                          carType:response.carType,
+                          serviceplan:response.serviceplan,
+                          vehiclenumber:response.vehiclenumber,
+                          address:response.address,
+                          requestedOn:response.requestedOn,
+                          deliveredOn:response.deliveredOn,
+                          status:response.status
 
-      }
+                      }
+                  });
+              })
+  .catch((err)=>{
+      console.log(err);
+      res.status(500).json({
+          error:err
+      });
   });
-})
-.catch((err)=>{
-console.log(err);
-res.status(500).json({
-error:err
-});
-});
 }
+
+
 
 //Find Completed Orders
 exports.findCompltedOrders = (req, res) => {
