@@ -22,7 +22,7 @@ router.get("/findAll", CarController.findAllCars);
 //router.get("/findByCar/:carId", CarController.findByCarId);
 
 //Update Car Details
-router.patch(
+router.put(
   "/updateCar/:id",
   [checkAuth.verifyToken, checkAuth.isAdmin],
   CarController.updateCar
