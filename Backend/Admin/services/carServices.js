@@ -24,13 +24,13 @@ router.get("/findAll", CarController.findAllCars);
 //Update Car Details
 router.put(
   "/updateCar/:id",
-  [checkAuth.verifyToken, checkAuth.isAdmin],
+ // [checkAuth.verifyToken, checkAuth.isAdmin],
   CarController.updateCar
 );
 
 router.delete(
   "/deleteCar/:carId",
-  [checkAuth.verifyToken, checkAuth.isAdmin],
+ // [checkAuth.verifyToken, checkAuth.isAdmin],
   CarController.deleteCar
 );
 
