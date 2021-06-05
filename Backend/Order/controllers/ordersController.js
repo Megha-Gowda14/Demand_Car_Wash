@@ -2,31 +2,44 @@ const Order = require("../model/orderModel");
 
 //TO place an Order
 exports.addOrder = (req, res) => {
-  const order = new Order({
-    customerId: req.body.customerId,
-    customerName: req.body.customerName,
-    carName: req.body.carName,
-    carNumber: req.body.carNumber,
-    custAddress: req.body.custAddress,
-    serviceName: req.body.serviceName,
-    servicePrice: req.body.servicePrice,
-  });
-  order
-    .save()
+    const order=new Ordermodel({
+        name:req.body.name,
+        email:req.body.email,
+        carType:req.body.carType,
+        serviceplan:req.body.serviceplan,
+        vehicleNumber:req.body.vehiclenumber,
+        address:req.body.address,
+        requestedOn:req.body.requestedOn,
+        deliveredOn:req.body.deliveredOn,
+        status:req.body.status
+        });
+  order.save()
     .then((result) => {
       console.log("Order Placed: " + result);
       res.status(201).json({
         message: "Thank you for your order.",
-        result,
-      });
-    })
-    .catch((err) => {
-      console.log("Placing Order Error" + err);
-      res.status(500).json({
-        error: err,
-      });
-    });
-};
+        order:{
+          _id:response._id,
+          name:response.name,
+          email:response.email,
+          carType:response.carType,
+          serviceplan:response.serviceplan,
+          vehiclenumber:response.vehiclenumber,
+          address:response.address,
+          requestedOn:response.requestedOn,
+          deliveredOn:response.deliveredOn,
+          status:response.status
+
+      }
+  });
+})
+.catch((err)=>{
+console.log(err);
+res.status(500).json({
+error:err
+});
+});
+}
 
 //Find Completed Orders
 exports.findCompltedOrders = (req, res) => {

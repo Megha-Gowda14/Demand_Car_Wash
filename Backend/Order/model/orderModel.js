@@ -1,16 +1,14 @@
 const mongoose = require("mongoose");
 
 const orderSchema = mongoose.Schema({
-  customerId: { type: String },
-  customerName: { type: String },
-  carName: { type: String },
-  carNumber: { type: String },
-  custAddress: { type: String, max: 40 },
-  serviceName: { type: String },
-  servicePrice: { type: Number },
-  washerId: { type: String },
+  name: { type: String },
+  email:{type:String},
+  carType: { type: String },
+  serviceplan: { type: String },
+  vehiclenumber:{type:String},
+  address:{type:String},
   requestedOn: { type: Date, default: Date.now() },
-  deliveredOn: { type: Date },
+  deliveredOn: { type: Date, default:Date.now() },
   status: {
     type: String,
     default: "PLACED",
