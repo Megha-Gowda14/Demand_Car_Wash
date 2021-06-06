@@ -60,10 +60,9 @@
             </mat-card-content>
         </mat-tab>
 
-
         <mat-tab label="Sign Up">
           <mat-card-content>
-            <form action="" >
+            <form [formGroup]="formGroup" (ngSubmit)="signup()" >
               <mat-form-field>
                 <input
                   matInput
@@ -73,13 +72,8 @@
                   ngModel
                   #username="ngModel">
                 <mat-icon matSuffix>perm_identity</mat-icon>
-                <mat-error
-                  *ngIf="username.invalid">
-                  Username is required
-                </mat-error>
-  
               </mat-form-field>
-              <mat-form-field>
+              <mat-form-field> 
                 <input
                   matInput
                   placeholder="Email"
@@ -87,7 +81,6 @@
                   name="email"
                   ngModel
                   #email="ngModel">
-                  <mat-error *ngIf="email.invalid">Email is required</mat-error>
                 <mat-icon matSuffix>email</mat-icon>
               </mat-form-field>
               <mat-form-field>
@@ -96,30 +89,19 @@
                   placeholder="Password"
                   type="password"
                   required
-                  minlength="2"
+                  minlength="6"
                   name="password"
                   ngModel
                   #password="ngModel">
-                  <mat-error
-                    *ngIf="password.errors && password.errors.required">
-                    Password is required
-                  </mat-error>
-                  <mat-error
-                    *ngIf="password.errors && password.errors.minlength">
-                    Password must be of length more than 2
-                  </mat-error>
                 <mat-icon matSuffix>lock</mat-icon>
-  
               </mat-form-field>
-
-
               <mat-form-field>
-                  <input
+              <input
                   matInput
                   placeholder="Password"
                   type="password"
                   required
-                  minlength="2"
+                  minlength="6"
                   name="repassword"
                   ngModel
                   #repassword="ngModel">
@@ -129,16 +111,12 @@
                   </mat-error>
                 <mat-icon matSuffix>lock</mat-icon>
               </mat-form-field>
-              <button
+                <button
                 mat-raised-button
                 color="primary"
                 class="login-button">
                 Sign Up
               </button>
             </form>
-            
           </mat-card-content>
-        </mat-tab>
-      </mat-tab-group>
-    </mat-card>
-  </div>
+</mat-tab>

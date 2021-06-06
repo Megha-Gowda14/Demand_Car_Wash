@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthServiceService } from '../auth-service.service';
 import { Router} from '@angular/router';
 import { PersonaldetailService } from '../personaldeatil.service';
+import { CustomersignupService } from '../customersignup.service';
 
 @Component({
   selector: 'app-signup-login',
@@ -12,7 +13,8 @@ import { PersonaldetailService } from '../personaldeatil.service';
 export class SignupLoginComponent implements OnInit {
   formGroup!: FormGroup;
 
-  constructor(private authService:AuthServiceService,private router:Router,private personaldetail:PersonaldetailService) { }
+  constructor(private authService:AuthServiceService,private router:Router,private personaldetail:PersonaldetailService,
+    private customersignup:CustomersignupService ) { }
 
   ngOnInit(){
     this.initForm();
@@ -51,4 +53,13 @@ gotomember(pageName:string):void{
 /*onSubmit(){
   console.log(this.formGroup.value);
 }*/
+signup(){
+  console.log(this.formGroup.value);
+  this.customersignup.custsignup(this.formGroup.value)
+  .subscribe(
+    response=>console.log('success',response)
+  );
+  alert('registration successful');
+  this.router.navigate([''])
+}
 }
