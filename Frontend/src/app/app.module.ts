@@ -38,6 +38,7 @@ import { AdminOrdersComponent } from './admin-orders/admin-orders.component';
 import { AdminWasherComponent } from './admin-washer/admin-washer.component';
 import { WasherOrdersComponent } from './washer-orders/washer-orders.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BookingsComponent } from './bookings/bookings.component';
 
 
 
@@ -62,6 +63,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AdminOrdersComponent,
     AdminWasherComponent,
     WasherOrdersComponent,
+    BookingsComponent,
   
   ],
   imports: [
