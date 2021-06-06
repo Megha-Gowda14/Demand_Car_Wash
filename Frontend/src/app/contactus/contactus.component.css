@@ -35,6 +35,7 @@ h3 {
 .container {
 	padding: 12px 24px 24px 24px;
 	margin: 48px 12px;
+	margin-left: 120px;
 	background: #E3F2FD;
 	border-radius: 4px;
 }
