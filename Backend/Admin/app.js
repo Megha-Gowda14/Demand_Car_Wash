@@ -10,7 +10,7 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerDefinition = {
   openapi: '3.0.0',
   info: {
-    title: 'Car_Wash Admin API with Swagger',
+    title: 'Car_Wash API with Swagger',
     version: '1.0.0',
   },
   description:
