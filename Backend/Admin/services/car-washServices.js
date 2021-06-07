@@ -3,6 +3,20 @@ const router = express.Router();
 const checkAuth = require("../middlewares/check-auth");
 const ServiceController = require("../controllers/serviceController");
 
+
+/**
+ * @swagger
+ * /admin/car-services/addService
+ *   post:
+ *     summary: Add Services
+ *     requestBody: 
+ *     content: 
+ *       application/json:
+ *         schema:
+ *           type: object
+ *           properties:  
+ * 
+ */
 router.post("/addService",
   [checkAuth.verifyToken, checkAuth.isAdmin],
   ServiceController.addService
