@@ -3,9 +3,45 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const swaggerJSDoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express');
 //const cors = require("cors");
 
+const swaggerDefinition = {
+  openapi: '3.0.0',
+  info: {
+    title: 'Car_Wash Admin API with Swagger',
+    version: '1.0.0',
+  },
+  description:
+      'This is a simple CRUD API application made with Express and documented with Swagger',
+    license: {
+      name: 'Licensed Under MIT',
+      url: 'https://spdx.org/licenses/MIT.html',
+    },
+    contact: {
+      name: 'JSONPlaceholder',
+      url: 'https://jsonplaceholder.typicode.com',
+    },
+  servers: [
+    {
+      url:"http://localhost:4003",
+      description: 'Admin server',
+    },
+  ],
+};
 
+
+const options = {
+  swaggerDefinition,
+  // Paths to files containing OpenAPI definitions
+  apis: ['./services/*.js'],
+};
+
+const swaggerSpec = swaggerJSDoc(options);
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
+//routes
 const authRoutes = require("./services/authServices");
 const carRoutes = require("./services/carServices");
 const serviceRoutes = require("./services/car-washServices");
@@ -36,7 +72,6 @@ db.once("open", function () {
 });
 
 app.use(bodyParser.urlencoded({ extended: false }));
-
 //parse requests of content-type -application json
 app.use(bodyParser.json());
 
@@ -53,6 +88,7 @@ app.use((req, res, next) => {
   }
   next();
 });
+
 
 //Every request from admin route goes through this url : /admin
 app.use("/admin/auth", authRoutes);
