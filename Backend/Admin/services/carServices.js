@@ -10,16 +10,8 @@ router.post(
   CarController.addCar
 );
 
+//Get list of all the cars
 router.get("/findAll", CarController.findAllCars);
-
-//FInd All Brands
-//router.get("/findAllBrands", CarController.findAllBrands);
-
-//Find All Cars Specific Brand
-//router.post("/findByBrand", CarController.findByBrand);
-
-//FInd Car By It's Name
-//router.get("/findByCar/:carId", CarController.findByCarId);
 
 //Update Car Details
 router.put(
@@ -28,6 +20,7 @@ router.put(
   CarController.updateCar
 );
 
+//delete a particular car
 router.delete(
   "/deleteCar/:carId",
  // [checkAuth.verifyToken, checkAuth.isAdmin],
