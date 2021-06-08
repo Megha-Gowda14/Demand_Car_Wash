@@ -65,7 +65,7 @@ orderdata(){
   .subscribe(
     response=>console.log('success',response)
   );
-  alert('order placed');
+  alert('Your Bokking is Done');
   this.router.navigate(['customer'])
 }
 }
