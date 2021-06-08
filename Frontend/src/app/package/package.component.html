@@ -2,30 +2,36 @@
 <br>
 <br>
 <div class="text">
-    <h1><u><b><i>AVALIABLE SERVICES</i></b></u></h1>
-    <div class="container" style="font-family: cursive;">
-    <table>
+    <h1><u><b><i>AVALIABLE SERVICES</i></b></u></h1><br>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Sl.no</th>
+                <th>List of Services</th><br>
+            </tr>
+        </thead>
         <tbody>
-            <tr *ngFor="let service of services">              
-                   <td rowspan="4" >
-                       
-                    <button><b>{{service.name}}</b><h2></h2>
+            <tr *ngFor="let service of services;let i=index">              
+                <td><span>{{i+1}}</span></td>
+                     <td> <span> 
+                            <b>{{service.name}}</b><h2></h2>
                            <i>Type: {{service.serviceType}}<br></i>
                             <i>Description : </i>{{service.description}}<br>
                             Rs {{service.price}}<br>
                             <!--{{service.timeRequired}}<br>-->
                             {{service.where}}<br>
                             <input class="button" type="button" 
-                            STYLE="background-color: chocolate" 
+                            STYLE="background-color: rgb(146, 173, 190)" 
                             value="{{service.name}}:Rs {{service.price}}"
                             (click)="selectedService($event)"
                             mat-raised-button>
-                    </button>
-                    </td>
+                        </span>
+                     </td>
             </tr>
         </tbody>
+    
     </table>
-    </div>
+    
 </div>
 <app-footer></app-footer>
 

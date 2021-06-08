@@ -32,7 +32,8 @@ export class OrdersComponent implements OnInit {
         carType:[''],
         serviceplan:[''],
         vehiclenumber:['',Validators.required],
-        address:['',Validators.required]
+        address:['',Validators.required],
+        contactnumber:['',Validators.required]
       });
       }
 

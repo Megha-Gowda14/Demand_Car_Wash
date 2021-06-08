@@ -28,7 +28,7 @@ export class ContactusComponent implements OnInit {
 
   OnSubmit()
   {
-    alert("Form Submitted Successfully");
+    alert("Form Submitted Successfully,Will Reach you Shortly");
     this.formGroup.reset({})
   }
 }

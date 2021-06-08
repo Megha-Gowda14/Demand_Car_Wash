@@ -49,8 +49,6 @@ selectedService (event:any){
   console.log(this.selectedservice);
   this.serviceplan.emit<any>(this.selectedservice);
   this.gotoorder('orders');
-  //this.gotoorder('order');
-  //this.router.navigate(['carmodel']);
 }
 gotoorder(pageName:string){
   this.router.navigate([`${pageName}`])

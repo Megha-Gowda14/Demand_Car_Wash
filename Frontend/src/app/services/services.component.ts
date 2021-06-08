@@ -45,8 +45,7 @@ export class ServicesComponent implements OnInit {
       console.log(this.selectedcar);
       this.orderservice.emit<any>(this.selectedcar);
       this.gotopackage('package');
-      //this.router.navigate(['carmodel']);
-      
+       
     }
     gotopackage(pageName:String):void{
       this.router.navigate([`${pageName}`])
