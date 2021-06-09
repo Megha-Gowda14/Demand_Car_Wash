@@ -6,6 +6,7 @@ import { ServiceplanService } from '../serviceplan.service';
 import { HttpClient} from '@angular/common/http';
 import { Router } from '@angular/router';
 import { CheckoutService } from '../checkout.service';
+import { MybookingsService } from '../mybookings.service';
 
 @Component({
   selector: 'app-orders',
@@ -25,6 +26,7 @@ export class OrdersComponent implements OnInit {
     private formbuilder:FormBuilder,
     private http:HttpClient,
     private checkoutservice:CheckoutService,
+    private booking:MybookingsService,
     private router:Router ) {
       this.orderform=formbuilder.group({
         name:[''],
@@ -66,6 +68,7 @@ orderdata(){
   .subscribe(
     response=>console.log('success',response)
   );
+  this.booking.emit<any>(this.orderform.value);
   alert('Your Bokking is Done');
   this.router.navigate(['customer'])
 }

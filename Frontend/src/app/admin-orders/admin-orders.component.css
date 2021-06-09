@@ -9,11 +9,10 @@ h1{
 }
 
 table {
-    width:70%;
+    width:100%;
     border: 4px;
-    margin-left: 0px;
     align-content: center;
-    table-layout: fixed;
+    table-layout: auto;
   }
   table, th, td {
     border: 1px solid black;
@@ -33,16 +32,8 @@ table {
     background-color: black;
     color: white;
   }
-  .border{
-    padding: 10px;
-    margin-left: 250px;
-    margin-right: 40px;
-  }
   .btn{
     margin-right: 10px;
-    background-color:rgb(136, 207, 142);
+    background-color:rgb(212, 49, 8);
   }
-  #myicon {
-      font-size:20px;
-    margin-right: 10px;
-  }
+  
