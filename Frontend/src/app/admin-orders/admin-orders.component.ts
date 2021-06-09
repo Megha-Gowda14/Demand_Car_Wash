@@ -4,14 +4,12 @@ import { HttpClient } from '@angular/common/http';
 export class Order{
   constructor(
     public _id: String,
-    public customerId: String,
-    public customerName: String,
-    public carName: String,
-    public carNumber: String,
-    public custAddress: String,
-    public serviceName:string,
-    public servicePrice:string,
-    public washerId:string,
+    public name: String,
+    public email: String,
+    public carType: String,
+    public serviceplan: String,
+    public vehiclenumber: String,
+    public address:string,
     public requestedOn:Date,
     public deliveredOn:Date,
     public status:string
@@ -36,11 +34,10 @@ export class AdminOrdersComponent implements OnInit {
   }
 
   getOrders(){
-    this.httpClient.get<any>('http://localhost:4003/admin/order/findPlacedOrder').subscribe(
+    this.httpClient.get<any>('http://localhost:4004/order/findorders').subscribe(
       response=>{
         console.log(response);
-       this.orders=response.order;
-     
+       this.orders=response.orders;
       }
     );
 }

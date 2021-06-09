@@ -44,8 +44,8 @@ exports.addorder = (req, res) => {
 
 
 //Find Completed Orders
-exports.findCompltedOrders = (req, res) => {
-  Order.find({ status: "COMPLETED" })
+exports.findorders = (req, res) => {
+  Ordermodel.find({ status: "PLACED" })
     .exec()
     .then((response) => {
       if (response.length == 0) {

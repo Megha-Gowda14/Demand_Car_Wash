@@ -6,14 +6,14 @@ const OrderController = require("../controllers/orderController");
 //Get all the placed orders
 router.get(
   "/findPlacedOrder",
-  [checkAuth.verifyToken, checkAuth.isAdmin],
+ // [checkAuth.verifyToken, checkAuth.isAdmin],
   OrderController.findPlacedOrders
 );
 
 //update a particular order
 router.put(
   "/updateOrder/:orderId",
-  [checkAuth.verifyToken, checkAuth.isAdmin],
+ // [checkAuth.verifyToken, checkAuth.isAdmin],
   OrderController.updateOrder
 );
 

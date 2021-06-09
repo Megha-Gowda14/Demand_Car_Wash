@@ -7,6 +7,6 @@ router.post("/addorder",
 //[checkAuth.verifyToken], 
 OrderController.addorder);
 
-router.get("/findCompltedOrders", OrderController.findCompltedOrders);
+router.get("/findorders", OrderController.findorders);
 
 module.exports = router;

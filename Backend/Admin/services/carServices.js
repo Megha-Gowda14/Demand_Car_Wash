@@ -1,12 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const checkAuth = require("../middlewares/check-auth");
+//const checkAuth = require("../middlewares/check-auth");
 const CarController = require("../controllers/carController");
 
 //Add Car
 router.post(
   "/addCar",
-  [checkAuth.verifyToken, checkAuth.isAdmin],
+ // [checkAuth.verifyToken, checkAuth.isAdmin],
   CarController.addCar
 );
 
