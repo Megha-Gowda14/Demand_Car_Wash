@@ -7,7 +7,7 @@ exports.addorder = (req, res) => {
               email:req.body.email,
               carType:req.body.carType,
               serviceplan:req.body.serviceplan,
-              vehicleNumber:req.body.vehiclenumber,
+              vehiclenumber:req.body.vehiclenumber,
               address:req.body.address,
               requestedOn:req.body.requestedOn,
               deliveredOn:req.body.deliveredOn,
