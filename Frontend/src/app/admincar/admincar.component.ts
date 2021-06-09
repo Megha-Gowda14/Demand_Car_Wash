@@ -23,7 +23,6 @@ export class AdmincarComponent implements OnInit {
 
   closeResult!: string;
   cars:Car[]=[];
-  
 
   constructor(
     private httpClient: HttpClient,
@@ -63,6 +62,7 @@ export class AdmincarComponent implements OnInit {
     }
 
     onSubmit(f: NgForm) {
+      console.log(f.value);
       const url = 'http://localhost:4003/admin/car-func/addCar';
       this.httpClient.post(url, f.value)
         .subscribe((result) => {
