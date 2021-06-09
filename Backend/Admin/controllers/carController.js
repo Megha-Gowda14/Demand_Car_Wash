@@ -11,8 +11,7 @@ exports.addCar = (req, res) => {
         });
       } else {
         const car = new Carmodel({
-          name: req.body.name,
-         // brand: req.body.brand,
+          name: req.body.name
         });
         car.save()
           .then((response) => {
