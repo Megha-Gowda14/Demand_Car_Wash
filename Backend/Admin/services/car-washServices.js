@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const checkAuth = require("../middlewares/check-auth");
+//const checkAuth = require("../middlewares/check-auth");
 const ServiceController = require("../controllers/serviceController");
 
 
@@ -40,7 +40,7 @@ const ServiceController = require("../controllers/serviceController");
  *                    type:string
  */
 router.post("/addService",
-  [checkAuth.verifyToken, checkAuth.isAdmin],
+  //[checkAuth.verifyToken, checkAuth.isAdmin],
   ServiceController.addService
 );
 
@@ -106,7 +106,7 @@ router.get('/findAll', ServiceController.findAll);
  */
 router.put(
   "/updateService/:serviceId",
-  [checkAuth.verifyToken, checkAuth.isAdmin],
+ // [checkAuth.verifyToken, checkAuth.isAdmin],
   ServiceController.updateService
 );
 
@@ -138,7 +138,7 @@ router.put(
  */
 router.delete(
   "/deleteService/:serviceId",
-  [checkAuth.verifyToken, checkAuth.isAdmin],
+//  [checkAuth.verifyToken, checkAuth.isAdmin],
   ServiceController.deleteService
 );
 module.exports = router;
