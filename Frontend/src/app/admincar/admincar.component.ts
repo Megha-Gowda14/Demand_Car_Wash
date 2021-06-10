@@ -25,6 +25,7 @@ export class AdmincarComponent implements OnInit {
   cars:Car[]=[];
   car!:Car;
   editForm!: FormGroup;
+  deleteId! : String;
 
   constructor(
     private httpClient: HttpClient,
@@ -99,5 +100,22 @@ export class AdmincarComponent implements OnInit {
         });
           this.modalService.dismissAll();
         
+    }
+
+    openDelete(targetModal:any, car: Car) {
+       this.deleteId = car._id;
+      this.modalService.open(targetModal, {
+        backdrop: 'static',
+        size: 'lg'
+      });
+    }
+
+    onDelete() {
+      const deleteURL = 'http://localhost:4003/admin/car-func/deleteCar/' + this.deleteId;
+      this.httpClient.delete(deleteURL)
+        .subscribe((result) => {
+          this.ngOnInit();
+          this.modalService.dismissAll();
+        });
     }
   }
