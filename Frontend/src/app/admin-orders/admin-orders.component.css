@@ -11,6 +11,7 @@ h1{
 table {
     width:100%;
     border: 4px;
+    margin-left: 0px;
     align-content: center;
     table-layout: auto;
   }
@@ -34,6 +35,6 @@ table {
   }
   .btn{
     margin-right: 10px;
-    background-color:rgb(212, 49, 8);
+    background-color:rgb(213, 212, 224);
   }
   
