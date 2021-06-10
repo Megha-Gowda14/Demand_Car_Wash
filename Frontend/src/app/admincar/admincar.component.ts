@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import {ModalDismissReasons,NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -23,13 +23,21 @@ export class AdmincarComponent implements OnInit {
 
   closeResult!: string;
   cars:Car[]=[];
+  car!:Car;
+  editForm!: FormGroup;
 
   constructor(
     private httpClient: HttpClient,
-    private modalService: NgbModal) { }
+    private modalService: NgbModal,
+    private fb:FormBuilder) { }
 
   ngOnInit(): void {
     this.getCar();
+
+    this.editForm = this.fb.group({
+       _id: [''],
+       name: ['']
+    });
   }
 
 
@@ -70,4 +78,26 @@ export class AdmincarComponent implements OnInit {
         });
       this.modalService.dismissAll(); //dismiss the modal
     }
-}
+
+    openEdit(targetModal: any,car:Car){
+      this.modalService.open(targetModal,{
+        centered: true,
+        backdrop: 'static',
+        size: 'lg'
+      });
+      this.editForm.patchValue( {
+        _id: car._id, 
+        name: car.name,
+      });
+    }
+    onSave() {
+      const editURL = 'http://localhost:4003/admin/car-func/updateCar/'+ this.editForm.value._id;
+      console.log(this.editForm.value);
+      this.httpClient.put(editURL, this.editForm.value)
+        .subscribe((result) => {
+          this.ngOnInit();
+        });
+          this.modalService.dismissAll();
+        
+    }
+  }
