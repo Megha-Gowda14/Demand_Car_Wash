@@ -9,4 +9,10 @@ OrderController.addorder);
 
 router.get("/findorders", OrderController.findorders);
 
+router.put(
+    "/updateOrder/:orderId",
+   // [checkAuth.verifyToken, checkAuth.isAdmin],
+   OrderController.updateOrder
+  );
+  
 module.exports = router;
