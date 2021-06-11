@@ -13,7 +13,7 @@ table {
     border: 4px;
     margin-left: 0px;
     align-content: center;
-    table-layout: fixed;
+    table-layout: auto;
   }
   table, th, td {
     border: 1px solid black;
@@ -40,7 +40,7 @@ table {
   }
   .btn{
     margin-right: 10px;
-    background-color:rgb(136, 207, 142);
+    background-color:rgb(213, 212, 224);
   }
   #myicon {
       font-size:20px;
