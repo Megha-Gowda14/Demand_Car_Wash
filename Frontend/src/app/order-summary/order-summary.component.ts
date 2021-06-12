@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { StripeCardComponent, StripeService} from "ngx-stripe";
 import { StripeCardElementOptions,StripeElementsOptions } from '@stripe/stripe-js';
 import { HttpClient } from '@angular/common/http';
+import {MybookingsService} from '../mybookings.service';
 
 @Component({
   selector: 'app-order-summary',
@@ -17,18 +18,18 @@ export class OrderSummaryComponent implements OnInit {
     locale: 'es'
   };
 
-  constructor(private stripeService: StripeService,private http:HttpClient) { }
+  constructor(private stripeService: StripeService,private http:HttpClient, private mybooking: MybookingsService) { }
 
   ngOnInit(): void {
-    this.mybooking.on().subscribe((data: any)=>{
+    this.mybooking.on<any>().subscribe((data: any)=>{
       this.pays=data;
     });
 
-    this.washer.on().subscribe((data: any)=>{
+   /* this.washer.on<any>().subscribe((data: any)=>{
      this.washeraction=data;
      console.log(data);
      
-    });
+    });*/
   }
   pay(amount: any) {    
  
