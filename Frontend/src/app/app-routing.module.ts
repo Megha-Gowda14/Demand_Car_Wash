@@ -8,6 +8,7 @@ import { AdminComponent } from './admin/admin.component';
 import { PackageComponent } from './package/package.component';
 import { MemberComponent } from './member/member.component';
 import { OrdersComponent } from './orders/orders.component';
+import { OrderSummaryComponent } from './order-summary/order-summary.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path:'admin',component:AdminComponent},
   {path:'package' , component:PackageComponent},
   {path:'member',component:MemberComponent},
-  {path:'orders',component:OrdersComponent}
+  {path:'orders',component:OrdersComponent},
+  {path:'order-summary',component:OrderSummaryComponent}
 ];
 
 

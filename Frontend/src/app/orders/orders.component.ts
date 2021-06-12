@@ -7,6 +7,7 @@ import { HttpClient} from '@angular/common/http';
 import { Router } from '@angular/router';
 import { CheckoutService } from '../checkout.service';
 import { MybookingsService } from '../mybookings.service';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-orders',
@@ -19,6 +20,7 @@ export class OrdersComponent implements OnInit {
   public serviceplanchosen='';
   public personaldetails:any='';
   orderform:FormGroup;
+  public bookingaction:any='';
 
   constructor(private orderservice: OrderService,
     private personaldetail:PersonaldetailService,
@@ -27,7 +29,8 @@ export class OrdersComponent implements OnInit {
     private http:HttpClient,
     private checkoutservice:CheckoutService,
     private booking:MybookingsService,
-    private router:Router ) {
+    private router:Router,
+    private modalService: NgbModal ) {
       this.orderform=formbuilder.group({
         name:[''],
         email:[''],
@@ -64,12 +67,15 @@ export class OrdersComponent implements OnInit {
 
 orderdata(){
   console.log(this.orderform.value);
+  alert('YOUR ORDER HAS BEEN PLACED');
   this.checkoutservice.placeorder(this.orderform.value)
   .subscribe(
     response=>console.log('success',response)
   );
   this.booking.emit<any>(this.orderform.value);
-  alert('Your Bokking is Done');
-  this.router.navigate(['customer'])
+  this.trackorder();
+}
+trackorder(){
+  this.router.navigate(['order-summary'])
 }
 }

@@ -5,8 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';  
 import { SignupLoginComponent } from './signup-login/signup-login.component';
-
-
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
@@ -16,7 +14,6 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
-
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
@@ -39,7 +36,8 @@ import { AdminWasherComponent } from './admin-washer/admin-washer.component';
 import { WasherOrdersComponent } from './washer-orders/washer-orders.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BookingsComponent } from './bookings/bookings.component';
-
+import  { NgxStripeModule } from 'ngx-stripe';
+import { OrderSummaryComponent } from './order-summary/order-summary.component';
 
 
 @NgModule({
@@ -64,6 +62,7 @@ import { BookingsComponent } from './bookings/bookings.component';
     AdminWasherComponent,
     WasherOrdersComponent,
     BookingsComponent,
+    OrderSummaryComponent,
   
   ],
   imports: [
@@ -84,7 +83,8 @@ import { BookingsComponent } from './bookings/bookings.component';
     ReactiveFormsModule,
     OwlModule,
     MatCarouselModule.forRoot(),
-    NgbModule
+    NgbModule,
+    NgxStripeModule.forRoot('pk_test_51J1EA4SA4RatPZEoWBBET4IeBOCiSEKOsWaKshK3TNymopjf45T7tOM2IdvjhC2qpacvUhHvjS6CoKqpWBaccTm000RaunOXZm')
       ],
       providers: [],
       bootstrap: [AppComponent]
