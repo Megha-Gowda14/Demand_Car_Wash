@@ -1,0 +1,32 @@
+.order{
+    font-weight: 900;
+    background-color: red;
+}
+
+.container{
+    background-color: lightgrey;
+    text-align: center;
+}
+
+.btn{
+    text-align: center;
+    color:white;
+    background-color:black;
+}
+
+h1{
+    font-weight: 900;
+    text-align: center;
+}
+
+h3{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+
+.log{
+    text-align: right;
+}

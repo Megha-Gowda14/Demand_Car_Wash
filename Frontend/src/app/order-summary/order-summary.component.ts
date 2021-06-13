@@ -3,6 +3,7 @@ import { StripeCardComponent, StripeService} from "ngx-stripe";
 import { StripeCardElementOptions,StripeElementsOptions } from '@stripe/stripe-js';
 import { HttpClient } from '@angular/common/http';
 import {MybookingsService} from '../mybookings.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-order-summary',
@@ -18,7 +19,10 @@ export class OrderSummaryComponent implements OnInit {
     locale: 'es'
   };
 
-  constructor(private stripeService: StripeService,private http:HttpClient, private mybooking: MybookingsService) { }
+  constructor(private stripeService: StripeService,
+      private http:HttpClient, 
+      private mybooking: MybookingsService,
+      private router:Router) { }
 
   ngOnInit(): void {
     this.mybooking.on<any>().subscribe((data: any)=>{
@@ -43,13 +47,14 @@ export class OrderSummaryComponent implements OnInit {
         alert('payment successful');
       }
     });
+    this.router.navigate(['customer']);
  
     handler.open({
       name: 'Clear Car Wash',
       description: 'car wash',
+      currency:"INR",
       amount: amount * 100
-    });
- 
+    });    
   }
  
   loadStripe() {
