@@ -8,16 +8,16 @@
 	
 	<h3>Contact Us</h3>
 	<form [formGroup]="formGroup" (ngSubmit)="OnSubmit()" >
-		<label for="first_name">First Name</label>
+		<b><label for="first_name">First Name</label></b>
 		<input name="first_name" type="text" required placeholder="John" formControlName="first_name"/>
 		<br>
-		<label for="last_name">Last Name</label>
+		<b><label for="last_name">Last Name</label></b>
 		<input name="last_name" type="text" required placeholder="Doe" formControlName="last_name"/>
 		<br>
-		<label for="email">Email</label>
+		<b><label for="email">Email</label></b>
 		<input name="email" type="email" required placeholder="you@domain.com" formControlName="email"/>
 		<br>
-		<label for="message">Message</label><br>
+		<b><label for="message">Message</label><br></b>
 		<textarea name="message" cols="30" rows="5" placeholder="Enter your message here ..." required formControlName="message"> </textarea>
 		<div class="center">
 			<input type="submit" value="Submit">

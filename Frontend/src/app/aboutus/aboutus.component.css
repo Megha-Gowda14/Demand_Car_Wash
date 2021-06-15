@@ -3,20 +3,21 @@
 .whyus{
 
     font-family: 'Oswald', sans-serif;
+    background-color: rgb(191, 222, 235);
   }
 
   .heading{
-    color: rgba(216, 58, 58, 0.678);
+    color: rgba(79, 60, 247, 0.911);
     
     font-size: 300%;
     
-    font-weight: bold;
+    font-weight: 1000px;
     text-align: center;
     }
 
 .para{
   color: rgb(2, 11, 12);
-  font-weight: 100;
+  font-weight: 590;
   font-size: large;
  
     }
